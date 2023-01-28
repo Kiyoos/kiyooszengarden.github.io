@@ -1,18 +1,99 @@
-/* Error: Undefined variable.
- *   ,
- * 5 |     background-color: $body-background-color;
- *   |                       ^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   _atoms.scss 5:23  @use
- *   style.scss 5:1    root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a   \2577 \a 5 \2502      background-color: $body-background-color;\d\a   \2502                        ^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   _atoms.scss 5:23  @use\a   style.scss 5:1    root stylesheet";
+/* VARIABLES */
+@import url("https://fonts.googleapis.com/css2?family=Exo+2&family=Rubik+Vinyl");
+/* ATOMS - smaller pieces */
+body {
+  background-color: #DEECDA;
+  font-family: "Exo 2", sans-serif;
 }
+
+h1, h2, h3 {
+  font-family: "Rubik Vinyl", cursive;
+  color: #FFF;
+  font-weight: lighter;
+  padding: 1em;
+}
+
+/* MOLECULES */ /* ORGANISMS */ /* CSS Zen Garden */
+/* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
+h1, h2 {
+  background-color: #309E6D;
+}
+
+.page-wrapper {
+  display: grid;
+  grid-gap: 1em;
+  justify-content: space-evenly;
+  grid-template-columns: 15% 15% 15% 15% 15% 15%;
+}
+.page-wrapper section {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 7;
+}
+.page-wrapper section header {
+  display: grid;
+  grid-gap: 0;
+  justify-content: space-evenly;
+  grid-template-columns: 50% 50%;
+}
+.page-wrapper section header h1 {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  text-align: right;
+}
+
+.main {
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 7;
+}
+
+.sidebar {
+  grid-row-start: 4;
+  grid-row-end: 5;
+  grid-column-start: 1;
+  grid-column-end: 7;
+}
+
+#zen-preamble h3, #zen-explanation h3 {
+  color: #000;
+  font-weight: bold;
+}
+
+#zen-requirements h3 {
+  background-color: #E56B44;
+}
+
+.zen-resources {
+  background-color: #C93565;
+}
+.zen-resources h3 {
+  background-color: #C93565;
+}
+
+.benefits {
+  border: 0.5em solid #C93565;
+}
+.benefits h3 {
+  background-color: #000;
+}
+
+.design-selection, .design-archives {
+  background-color: #5BB527;
+}
+.design-selection h3, .design-archives h3 {
+  background-color: #5BB527;
+}
+
+.participation {
+  background-color: #106C42;
+}
+.participation h3 {
+  background-color: #106C42;
+}
+
+/*# sourceMappingURL=style.css.map */

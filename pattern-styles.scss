@@ -1,23 +1,28 @@
 /* Pattern-Library Stylesheet */
+@use 'variables' as *;
+@use 'atoms';
+@use 'molecules';
+@use 'organisms';
 
-// Variables
-$background-color: #
 
 * {
     box-sizing: border-box;
   }
   html {
-    background-color: $background-color;
+    background-color: $color-background;
     padding: 5%;
   }
   
   body {
-    font-family: $fonts-body;
-    font-size: 85%;
-    color: $text-dark;
-    background-color: $primary;
+    font-family: $font-body;
+    font-size: 1em;
+    background-color: $color-primary;
     margin: 0;
     padding: 1em;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: $font-headers;
   }
   
   section {
@@ -33,7 +38,7 @@ $background-color: #
     }
     > figure {
       margin: 0;
-      flex: 1 1 25%;
+      flex: 1 1;
     }
   }
   .swatch {
@@ -42,14 +47,21 @@ $background-color: #
     border: 1px solid;
   }
   .primary {
-    background-color: $primary;
+    background-color: $color-primary;
   }
   .accent1 {
-    background-color: $accent1;
+    background-color: $color-accent1;
   }
   .accent2 {
-    background-color: $accent2;
+    background-color: $color-accent2;
   }
+  .accent3 {
+    background-color: $color-accent3;
+  }
+  .accent4 {
+    background-color: $color-accent4;
+  }
+
   .text-dark {
     background-color: $text-dark;
   }

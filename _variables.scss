@@ -1,8 +1,26 @@
 /* VARIABLES */
 
-//colors
-$body-background-color: #F234;
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&family=Rubik+Vinyl');
 
-// body {
-//     background-color: $body-background-color;
-// }
+//colors
+$color-background: #DEECDA;
+$color-primary: #309E6D;
+$color-accent1: #106C42;
+$color-accent2: #5BB527;
+$color-accent3: #E56B44;
+$color-accent4: #C93565;
+$text-dark: #000;
+$text-light: #FFF;
+
+//fonts
+$font-headers: 'Rubik Vinyl', cursive;
+$font-body: 'Exo 2', sans-serif;
+$font-size-headers: 1em;
+$font-size-body: 1em;
+
+//borders
+$border-color: $color-accent4;
+$border-type: solid;
+$border-thickness: .5em;
+
+$grid-gap: 1em;

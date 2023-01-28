@@ -1,6 +1,53 @@
 /* ATOMS - smaller pieces */
-@use 'variables';
+@use 'variables' as *;
 
 body {
-    background-color: $body-background-color;
+    background-color: $color-background;
+    font-family: $font-body;
+}
+
+h1, h2, h3 {
+    font-family: $font-headers;
+    color: $text-light;
+    font-weight: lighter;
+    padding: 1em;
+}
+
+@mixin same-background ($background-color){
+    background-color: $background-color;
+    h3 {
+        background-color: $background-color;
+    }
+}
+
+@mixin border($border-color: #000, $border-type: solid, $border-thickness: 2px){
+    border: $border-thickness $border-type $border-color;
+}
+
+@mixin set-grid($grid-gap, $grid-columns){
+    display: grid;
+    grid-gap: $grid-gap;
+    justify-content: space-evenly;
+    grid-template-columns: $grid-columns;
+}
+
+@mixin set-grid-item ($grid-row-start, $grid-row-end, $grid-column-start, $grid-column-end){
+    grid-row-start: $grid-row-start;
+    grid-row-end: $grid-row-end;
+    grid-column-start: $grid-column-start;
+    grid-column-end: $grid-column-end;
+}
+
+
+// FROM CLASS PATTERN STYLESHEET
+@mixin set-flex($direction: row, $wrap: wrap) {
+    display: flex;
+    flex-flow: $direction $wrap;
+  }
+
+@mixin uppercase($color: $text-dark) {
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $color;
 }
