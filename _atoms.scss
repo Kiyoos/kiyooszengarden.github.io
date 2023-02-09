@@ -10,12 +10,16 @@ h1, h2, h3 {
     font-family: $font-headers;
     color: $text-light;
     font-weight: lighter;
-    padding: 1em;
+}
+
+//adds colon and space afterwards to H1
+h1::after {
+    content:":";
 }
 
 @mixin same-background ($background-color){
     background-color: $background-color;
-    h3 {
+    > h3 {
         background-color: $background-color;
     }
 }
@@ -27,16 +31,16 @@ h1, h2, h3 {
 @mixin set-grid($grid-gap, $grid-columns){
     display: grid;
     grid-gap: $grid-gap;
-    justify-content: space-evenly;
     grid-template-columns: $grid-columns;
 }
 
-@mixin set-grid-item ($grid-row-start, $grid-row-end, $grid-column-start, $grid-column-end){
-    grid-row-start: $grid-row-start;
-    grid-row-end: $grid-row-end;
-    grid-column-start: $grid-column-start;
-    grid-column-end: $grid-column-end;
-}
+// **** replaced with grid-area
+// @mixin set-grid-item ($grid-row-start, $grid-row-end, $grid-column-start, $grid-column-end){
+//     grid-row-start: $grid-row-start;
+//     grid-row-end: $grid-row-end;
+//     grid-column-start: $grid-column-start;
+//     grid-column-end: $grid-column-end;
+// }
 
 
 // FROM CLASS PATTERN STYLESHEET

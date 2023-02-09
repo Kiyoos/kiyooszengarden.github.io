@@ -1,0 +1,105 @@
+/* Framework of Site - Grid, Flexbox, etc. */
+
+@use 'variables' as *;
+@use 'atoms';
+
+/* Naming Grid Areas */
+
+// page-wrapper grid area
+.intro { grid-area: intro; }
+.main { grid-area: main; }
+.sidebar { grid-area: sidebar; }
+
+// intro grid area
+header { grid-area: header; }
+.summary { grid-area: summary; }
+.preamble { grid-area: enlightenment; }
+
+// main grid area
+.explanation { grid-area: about; }
+.participation { grid-area: participation; }
+.benefits { grid-area: benefits; }
+requirements { grid-area: requirements; }
+footer { grid-area: footer; }
+
+// sidebar > wrapper grid area
+.design-selection { grid-area: design-selection; }
+.design-archives { grid-area: archives; }
+.zen-resources { grid-area: resources; }
+
+// design-selection grid area
+.design-selection h3 { grid-area: design-h3; }
+.design-selection nav { grid-area: design-nav; }
+
+// zen-resources grid area
+.zen-resources h3 { grid-area: resources-h3; }
+.zen-resources ul { grid-area: resources-ul; }
+
+// design-selection > nav
+.design-selection a:first-child { grid-area: title; }
+.design-selection #text { grid-area: by; }
+.design-selection a:last-child { grid-area: author; }
+
+.page-wrapper {
+    @include atoms.set-grid(0, repeat(6, 1fr));
+    grid-template-areas:
+        "intro  intro   intro   intro   intro   intro"
+        "sidebar sidebar sidebar sidebar sidebar sidebar"
+        "main   main    main    main    main    main";
+}
+
+.intro {
+    @include atoms.set-grid(0, repeat(6, 1fr));
+    grid-template-areas:
+        "header header header header header header"
+        "enlightenment enlightenment enlightenment enlightenment summary summary";
+}
+
+header {
+    @include atoms.set-grid(0, max-content 1fr);
+}
+
+.wrapper {
+    @include atoms.set-grid(0, repeat(3, 1fr));
+    grid-template-areas:
+        "design-selection design-selection design-selection"
+        "archives  resources  resources";
+}
+
+.design-selection {
+    @include atoms.set-grid(0, max-content 1fr);
+    grid-template-areas:
+        "design-h3  design-nav";
+    nav ul {
+        @include atoms.set-grid(0, repeat(auto-fit, minmax(200px, 1fr)));
+        li {
+            @include atoms.set-grid(0, min-content 1fr);
+            margin: .5em;
+            grid-template-areas:
+                "title title"
+                "by author";
+        }
+    }
+}
+
+.zen-resources {
+    @include atoms.set-grid(0, max-content 1fr);
+    grid-template-areas:
+        "resources-h3  resources-ul";
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        // @include atoms.set-grid(0, repeat(auto-fit, minmax(200px, 1fr)));
+        li {
+            margin: .5em;
+        }
+    }
+}
+
+
+
+
+
+// *******  look at putting in a media break at 780px, because of the H1 & H2
+

@@ -5,32 +5,40 @@
 @use 'atoms';
 @use 'molecules';
 @use 'organisms';
+@use 'framework';
+// @use 'borders';
 
-h1, h2 {
-    background-color: $color-primary;
+
+body {
+    margin: 0px;
+    padding: 0px;
 }
 
-.page-wrapper {
-    @include atoms.set-grid($grid-gap, 15% 15% 15% 15% 15% 15%);
-    section {
-        // display:list-item;
-        @include atoms.set-grid-item(1,3,1,7);
-        header {
-            @include atoms.set-grid(0, 50% 50%);
-            h1 {
-                @include atoms.set-grid-item(1,2,1,2);
-                text-align: right;
-            }
+.main>*, .intro div, .wrapper div, h1, h2 {
+    padding: calc($div-padding/2) $div-padding;
+}
+
+.intro {
+    header {
+        background-color: $color-primary;
+        h1,h2 { font-size: 2em; }
+        h1 { 
+            text-align: right;
+            // padding-left: $div-padding;
+        }
+        h2 {
+            padding-left: 0;
         }
     }
+    // div {
+    //     padding: $div-padding;
+    // }
 }
 
-.main {
-    @include atoms.set-grid-item (3,4,1,7);
-}
 
-.sidebar {
-    @include atoms.set-grid-item (4,5,1,7);
+
+abbr{
+    text-decoration: none;
 }
 
 #zen-preamble, #zen-explanation {
@@ -44,9 +52,7 @@ h1, h2 {
     background-color: $color-accent3;
 }
 
-.zen-resources {
-    @include atoms.same-background($color-accent4);
-}
+
 
 .benefits {
     @include atoms.border ($color-accent4,$border-type,$border-thickness);
@@ -55,10 +61,22 @@ h1, h2 {
     }
 }
 
-.design-selection, .design-archives {
+.design-selection {
+    margin: 0;
     @include atoms.same-background($color-accent2);
 }
 
+// .design-archives, .zen-resources {
+.wrapper {
+    margin: 0;
+    @include atoms.same-background($color-accent3);
+}
+
+// .zen-resources {
+//     @include atoms.same-background($color-accent4);
+// }
+
 .participation {
+    margin: 10px 20px;
     @include atoms.same-background($color-accent1);
 }

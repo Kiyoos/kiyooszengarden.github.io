@@ -10,53 +10,185 @@ h1, h2, h3 {
   font-family: "Rubik Vinyl", cursive;
   color: #FFF;
   font-weight: lighter;
-  padding: 1em;
 }
 
-/* MOLECULES */ /* ORGANISMS */ /* CSS Zen Garden */
-/* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
-h1, h2 {
-  background-color: #309E6D;
+h1::after {
+  content: ":";
+}
+
+/* MOLECULES */ /* ORGANISMS */ /* Framework of Site - Grid, Flexbox, etc. */
+/* Naming Grid Areas */
+.intro {
+  grid-area: intro;
+}
+
+.main {
+  grid-area: main;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+header {
+  grid-area: header;
+}
+
+.summary {
+  grid-area: summary;
+}
+
+.preamble {
+  grid-area: enlightenment;
+}
+
+.explanation {
+  grid-area: about;
+}
+
+.participation {
+  grid-area: participation;
+}
+
+.benefits {
+  grid-area: benefits;
+}
+
+requirements {
+  grid-area: requirements;
+}
+
+footer {
+  grid-area: footer;
+}
+
+.design-selection {
+  grid-area: design-selection;
+}
+
+.design-archives {
+  grid-area: archives;
+}
+
+.zen-resources {
+  grid-area: resources;
+}
+
+.design-selection h3 {
+  grid-area: design-h3;
+}
+
+.design-selection nav {
+  grid-area: design-nav;
+}
+
+.zen-resources h3 {
+  grid-area: resources-h3;
+}
+
+.zen-resources ul {
+  grid-area: resources-ul;
+}
+
+.design-selection a:first-child {
+  grid-area: title;
+}
+
+.design-selection #text {
+  grid-area: by;
+}
+
+.design-selection a:last-child {
+  grid-area: author;
 }
 
 .page-wrapper {
   display: grid;
-  grid-gap: 1em;
-  justify-content: space-evenly;
-  grid-template-columns: 15% 15% 15% 15% 15% 15%;
+  grid-gap: 0;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas: "intro  intro   intro   intro   intro   intro" "sidebar sidebar sidebar sidebar sidebar sidebar" "main   main    main    main    main    main";
 }
-.page-wrapper section {
-  grid-row-start: 1;
-  grid-row-end: 3;
-  grid-column-start: 1;
-  grid-column-end: 7;
-}
-.page-wrapper section header {
+
+.intro {
   display: grid;
   grid-gap: 0;
-  justify-content: space-evenly;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas: "header header header header header header" "enlightenment enlightenment enlightenment enlightenment summary summary";
 }
-.page-wrapper section header h1 {
-  grid-row-start: 1;
-  grid-row-end: 2;
-  grid-column-start: 1;
-  grid-column-end: 2;
+
+header {
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: max-content 1fr;
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "design-selection design-selection design-selection" "archives  resources  resources";
+}
+
+.design-selection {
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: max-content 1fr;
+  grid-template-areas: "design-h3  design-nav";
+}
+.design-selection nav ul {
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.design-selection nav ul li {
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: min-content 1fr;
+  margin: 0.5em;
+  grid-template-areas: "title title" "by author";
+}
+
+.zen-resources {
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: max-content 1fr;
+  grid-template-areas: "resources-h3  resources-ul";
+}
+.zen-resources ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.zen-resources ul li {
+  margin: 0.5em;
+}
+
+/* CSS Zen Garden */
+/* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.main > *, .intro div, .wrapper div, h1, h2 {
+  padding: 10px 20px;
+}
+
+.intro header {
+  background-color: #309E6D;
+}
+.intro header h1, .intro header h2 {
+  font-size: 2em;
+}
+.intro header h1 {
   text-align: right;
 }
-
-.main {
-  grid-row-start: 3;
-  grid-row-end: 4;
-  grid-column-start: 1;
-  grid-column-end: 7;
+.intro header h2 {
+  padding-left: 0;
 }
 
-.sidebar {
-  grid-row-start: 4;
-  grid-row-end: 5;
-  grid-column-start: 1;
-  grid-column-end: 7;
+abbr {
+  text-decoration: none;
 }
 
 #zen-preamble h3, #zen-explanation h3 {
@@ -68,13 +200,6 @@ h1, h2 {
   background-color: #E56B44;
 }
 
-.zen-resources {
-  background-color: #C93565;
-}
-.zen-resources h3 {
-  background-color: #C93565;
-}
-
 .benefits {
   border: 0.5em solid #C93565;
 }
@@ -82,17 +207,27 @@ h1, h2 {
   background-color: #000;
 }
 
-.design-selection, .design-archives {
+.design-selection {
+  margin: 0;
   background-color: #5BB527;
 }
-.design-selection h3, .design-archives h3 {
+.design-selection > h3 {
   background-color: #5BB527;
 }
 
+.wrapper {
+  margin: 0;
+  background-color: #E56B44;
+}
+.wrapper > h3 {
+  background-color: #E56B44;
+}
+
 .participation {
+  margin: 10px 20px;
   background-color: #106C42;
 }
-.participation h3 {
+.participation > h3 {
   background-color: #106C42;
 }
 
