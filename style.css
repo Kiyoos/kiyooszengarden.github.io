@@ -1,22 +1,6 @@
 /* VARIABLES */
 @import url("https://fonts.googleapis.com/css2?family=Exo+2&family=Rubik+Vinyl");
-/* ATOMS - smaller pieces */
-body {
-  background-color: #DEECDA;
-  font-family: "Exo 2", sans-serif;
-}
-
-h1, h2, h3 {
-  font-family: "Rubik Vinyl", cursive;
-  color: #FFF;
-  font-weight: lighter;
-}
-
-h1::after {
-  content: ":";
-}
-
-/* MOLECULES */ /* ORGANISMS */ /* Framework of Site - Grid, Flexbox, etc. */
+/* MIXINS */ /* ANIMATIONS */ /* ORGANISMS */ /* Framework of Site - Grid, Flexbox, etc. */
 /* Naming Grid Areas */
 .intro {
   grid-area: intro;
@@ -42,8 +26,16 @@ header {
   grid-area: enlightenment;
 }
 
+.intro h1 {
+  grid-area: h1;
+}
+
+.intro h2 {
+  grid-area: h2;
+}
+
 .explanation {
-  grid-area: about;
+  grid-area: explanation;
 }
 
 .participation {
@@ -60,6 +52,10 @@ requirements {
 
 footer {
   grid-area: footer;
+}
+
+.main::after {
+  grid-area: black-box;
 }
 
 .design-selection {
@@ -82,12 +78,44 @@ footer {
   grid-area: design-nav;
 }
 
+.benefits h3 {
+  grid-area: b-h3;
+}
+
+.benefits p {
+  grid-area: b-p;
+}
+
+.requirements h3 {
+  grid-area: req-h3;
+}
+
+.requirements p:nth-of-type(1) {
+  grid-area: req-p1;
+}
+
+.requirements p:nth-of-type(2) {
+  grid-area: req-p2;
+}
+
+.requirements p:nth-of-type(3) {
+  grid-area: req-p3;
+}
+
+.requirements p:nth-of-type(4) {
+  grid-area: req-p4;
+}
+
+.requirements p:nth-of-type(5) {
+  grid-area: req-p5;
+}
+
 .zen-resources h3 {
-  grid-area: resources-h3;
+  grid-area: r-h3;
 }
 
 .zen-resources ul {
-  grid-area: resources-ul;
+  grid-area: r-ul;
 }
 
 .design-selection a:first-child {
@@ -102,43 +130,79 @@ footer {
   grid-area: author;
 }
 
-.page-wrapper {
-  display: grid;
-  grid-gap: 0;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-areas: "intro  intro   intro   intro   intro   intro" "sidebar sidebar sidebar sidebar sidebar sidebar" "main   main    main    main    main    main";
+@media screen and (min-width: 700px) {
+  .page-wrapper {
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: "intro  intro   intro   intro   intro   intro" "sidebar sidebar sidebar sidebar sidebar sidebar" "main   main    main    main    main    main";
+  }
 }
 
 .intro {
   display: grid;
   grid-gap: 0;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-areas: "header header header header header header" "enlightenment enlightenment enlightenment enlightenment summary summary";
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "header header header" ". summary summary" "enlightenment enlightenment enlightenment";
+}
+@media screen and (min-width: 700px) {
+  .intro {
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: "header header header header header header" "enlightenment enlightenment enlightenment enlightenment summary summary";
+  }
 }
 
 header {
   display: grid;
   grid-gap: 0;
-  grid-template-columns: max-content 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "h1 h1 . ." "h2 h2 h2 h2";
+}
+@media screen and (min-width: 700px) {
+  header {
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: "h1 h1 h2 h2 h2 h2";
+  }
+  header h1 {
+    min-width: 340px;
+  }
 }
 
-.wrapper {
-  display: grid;
-  grid-gap: 0;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-areas: "design-selection design-selection design-selection" "archives  resources  resources";
+@media screen and (min-width: 700px) {
+  .wrapper {
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "design-selection design-selection design-selection" "archives  resources  resources";
+  }
 }
 
-.design-selection {
-  display: grid;
-  grid-gap: 0;
-  grid-template-columns: max-content 1fr;
-  grid-template-areas: "design-h3  design-nav";
+@media screen and (min-width: 700px) {
+  .design-selection {
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: max-content 1fr;
+    grid-template-areas: "design-h3  design-nav";
+  }
+}
+.design-selection a:last-child {
+  padding-left: 0.5em;
 }
 .design-selection nav ul {
   display: grid;
   grid-gap: 0;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
+}
+@media screen and (min-width: 700px) {
+  .design-selection nav ul {
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  }
 }
 .design-selection nav ul li {
   display: grid;
@@ -148,11 +212,30 @@ header {
   grid-template-areas: "title title" "by author";
 }
 
-.zen-resources {
+.design-archives {
   display: grid;
   grid-gap: 0;
   grid-template-columns: max-content 1fr;
-  grid-template-areas: "resources-h3  resources-ul";
+}
+.design-archives h3 {
+  align-self: center;
+}
+.design-archives nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.design-archives nav ul li {
+  margin: 0.5em;
+}
+
+@media screen and (min-width: 700px) {
+  .zen-resources {
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: max-content 1fr;
+    grid-template-areas: "r-h3  r-ul";
+  }
 }
 .zen-resources ul {
   display: flex;
@@ -163,15 +246,75 @@ header {
   margin: 0.5em;
 }
 
+.main {
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: 1fr;
+  grid-template-areas: "explanation" "participation" "black-box" "benefits" "requirements" "footer";
+}
+
+@media screen and (min-width: 700px) {
+  .requirements {
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: "req-h3 req-h3 req-p1 req-p1 req-p1 req-p1" ". . req-p2 req-p2 req-p2 req-p2" ". . req-p3 req-p3 req-p3 req-p3" ". . req-p4 req-p4 req-p4 req-p4" ". . req-p5 req-p5 req-p5 req-p5";
+  }
+}
+.main::after, .benefits {
+  grid-row-start: 3;
+}
+
+.main::after {
+  z-index: -1;
+}
+
+@media screen and (min-width: 700px) {
+  .benefits {
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "b-h3 b-p b-p";
+  }
+}
 /* CSS Zen Garden */
 /* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
+.main > *, .intro div, .wrapper div {
+  padding: 1em 2em;
+}
+
+h1 {
+  padding: 1em;
+  padding-bottom: 0.5em;
+}
+
+h2 {
+  padding: 1em;
+  padding-top: 0;
+}
+
 body {
   margin: 0px;
   padding: 0px;
+  background-color: #DEECDA;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-family: "Exo 2", sans-serif;
 }
 
-.main > *, .intro div, .wrapper div, h1, h2 {
-  padding: 10px 20px;
+h1, h2, h3 {
+  font-family: "Rubik Vinyl", cursive;
+  color: #FFF;
+  font-weight: lighter;
+}
+
+h3 {
+  text-transform: uppercase;
+}
+
+h1::after {
+  content: ":";
 }
 
 .intro header {
@@ -179,14 +322,27 @@ body {
 }
 .intro header h1, .intro header h2 {
   font-size: 2em;
+  margin: 0;
 }
-.intro header h1 {
-  text-align: right;
-}
-.intro header h2 {
-  padding-left: 0;
+@media screen and (min-width: 700px) {
+  .intro header h1 {
+    text-align: right;
+  }
+  .intro header h2 {
+    padding-left: 0;
+  }
 }
 
+@media screen and (max-width: 700px) {
+  .preamble p:last-of-type {
+    padding-bottom: 2em;
+    margin-bottom: 0;
+    border-bottom: 10px solid #C93565;
+  }
+  .summary {
+    align-content: flex-end;
+  }
+}
 abbr {
   text-decoration: none;
 }
@@ -196,15 +352,48 @@ abbr {
   font-weight: bold;
 }
 
+#zen-explanation {
+  margin-bottom: 3em;
+}
+
+#zen-requirements {
+  padding-top: 0;
+  margin-top: 0;
+}
+
 #zen-requirements h3 {
+  text-align: center;
+  margin: 2em;
+  padding: 2em;
   background-color: #E56B44;
 }
 
+.main::after {
+  content: "";
+  display: block;
+  height: 9.2em;
+  width: 100%;
+  background-color: #000;
+}
+
+@media screen and (min-width: 700px) {
+  .main::after {
+    height: 15em;
+    width: 33%;
+    background-color: #000;
+  }
+  .benefits h3 {
+    align-self: center;
+  }
+}
 .benefits {
+  margin: 2em;
   border: 0.5em solid #C93565;
 }
 .benefits h3 {
-  background-color: #000;
+  text-align: center;
+  margin: 0;
+  padding: 2em;
 }
 
 .design-selection {
@@ -214,21 +403,91 @@ abbr {
 .design-selection > h3 {
   background-color: #5BB527;
 }
+.design-selection h3 {
+  align-self: center;
+}
+.design-selection ul {
+  padding: 0;
+  align-content: center;
+}
+@media screen and (min-width: 700px) {
+  .design-selection ul {
+    padding-left: 2em;
+  }
+}
 
 .wrapper {
   margin: 0;
   background-color: #E56B44;
+  color: #FFF;
 }
 .wrapper > h3 {
   background-color: #E56B44;
 }
+.wrapper a {
+  color: #FFF;
+}
 
+.design-archives ul {
+  padding-left: 2em;
+  align-content: center;
+}
+
+.zen-resources {
+  background-color: #C93565;
+}
+.zen-resources > h3 {
+  background-color: #C93565;
+}
+.zen-resources h3 {
+  align-self: center;
+}
+.zen-resources ul {
+  padding-left: 0;
+}
+.zen-resources li {
+  align-self: center;
+}
+
+@media screen and (min-width: 700px) {
+  .zen-resources {
+    background-color: #E56B44;
+  }
+  .zen-resources > h3 {
+    background-color: #E56B44;
+  }
+  .zen-resources ul {
+    padding-left: 2em;
+  }
+}
 .participation {
-  margin: 10px 20px;
+  padding-top: 2em;
+  margin-bottom: 8em;
+  color: #FFF;
   background-color: #106C42;
+}
+.participation a {
+  color: #FFF;
+}
+@media screen and (min-width: 700px) {
+  .participation {
+    margin: 10px 20px;
+  }
 }
 .participation > h3 {
   background-color: #106C42;
+}
+
+* a {
+  text-decoration: none;
+}
+
+.sidebar li {
+  list-style: none;
+}
+
+footer {
+  margin-bottom: 15em;
 }
 
 /*# sourceMappingURL=style.css.map */

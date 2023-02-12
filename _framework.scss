@@ -1,7 +1,7 @@
 /* Framework of Site - Grid, Flexbox, etc. */
 
 @use 'variables' as *;
-@use 'atoms';
+@use 'mixins';
 
 /* Naming Grid Areas */
 
@@ -15,12 +15,17 @@ header { grid-area: header; }
 .summary { grid-area: summary; }
 .preamble { grid-area: enlightenment; }
 
+// header grid area
+.intro h1 { grid-area: h1; }
+.intro h2 { grid-area: h2; }
+
 // main grid area
-.explanation { grid-area: about; }
+.explanation { grid-area: explanation; }
 .participation { grid-area: participation; }
 .benefits { grid-area: benefits; }
 requirements { grid-area: requirements; }
 footer { grid-area: footer; }
+.main::after { grid-area: black-box; }
 
 // sidebar > wrapper grid area
 .design-selection { grid-area: design-selection; }
@@ -31,9 +36,21 @@ footer { grid-area: footer; }
 .design-selection h3 { grid-area: design-h3; }
 .design-selection nav { grid-area: design-nav; }
 
+// benefits grid area
+.benefits h3 { grid-area: b-h3; }
+.benefits p { grid-area: b-p; }
+
+// requirements grid area
+.requirements h3 { grid-area: req-h3; }
+.requirements p:nth-of-type(1) { grid-area: req-p1; }
+.requirements p:nth-of-type(2) { grid-area: req-p2; }
+.requirements p:nth-of-type(3) { grid-area: req-p3; }
+.requirements p:nth-of-type(4) { grid-area: req-p4; }
+.requirements p:nth-of-type(5) { grid-area: req-p5; }
+
 // zen-resources grid area
-.zen-resources h3 { grid-area: resources-h3; }
-.zen-resources ul { grid-area: resources-ul; }
+.zen-resources h3 { grid-area: r-h3; }
+.zen-resources ul { grid-area: r-ul; }
 
 // design-selection > nav
 .design-selection a:first-child { grid-area: title; }
@@ -41,40 +58,69 @@ footer { grid-area: footer; }
 .design-selection a:last-child { grid-area: author; }
 
 .page-wrapper {
-    @include atoms.set-grid(0, repeat(6, 1fr));
-    grid-template-areas:
-        "intro  intro   intro   intro   intro   intro"
-        "sidebar sidebar sidebar sidebar sidebar sidebar"
-        "main   main    main    main    main    main";
+    @media screen and (min-width: $media-medium) {
+        @include mixins.set-grid(0, repeat(6, 1fr));
+        grid-template-areas:
+            "intro  intro   intro   intro   intro   intro"
+            "sidebar sidebar sidebar sidebar sidebar sidebar"
+            "main   main    main    main    main    main";
+    }
 }
 
 .intro {
-    @include atoms.set-grid(0, repeat(6, 1fr));
+    @include mixins.set-grid(0, repeat(3, 1fr));
     grid-template-areas:
-        "header header header header header header"
-        "enlightenment enlightenment enlightenment enlightenment summary summary";
+    "header header header"
+    ". summary summary"
+    "enlightenment enlightenment enlightenment";
+    @media screen and (min-width: $media-medium) {
+        @include mixins.set-grid(0, repeat(6, 1fr));
+        grid-template-areas:
+            "header header header header header header"
+            "enlightenment enlightenment enlightenment enlightenment summary summary";
+    }
 }
 
+// .summary {
+//     display: grid;
+//     grid-template-rows: 1fr 2fr 1fr;
+// }
+
 header {
-    @include atoms.set-grid(0, max-content 1fr);
+    @include mixins.set-grid(0, repeat(4, 1fr));
+    grid-template-areas: "h1 h1 . ." "h2 h2 h2 h2";
+    @media screen and (min-width: $media-medium) {
+        @include mixins.set-grid(0, repeat(6, 1fr));
+        grid-template-areas: "h1 h1 h2 h2 h2 h2";
+        h1 { min-width: 340px; }
+    }
 }
 
 .wrapper {
-    @include atoms.set-grid(0, repeat(3, 1fr));
-    grid-template-areas:
-        "design-selection design-selection design-selection"
-        "archives  resources  resources";
+    @media screen and (min-width: $media-medium) {
+        @include mixins.set-grid(0, repeat(3, 1fr));
+        grid-template-areas:
+            "design-selection design-selection design-selection"
+            "archives  resources  resources";
+    }
 }
 
 .design-selection {
-    @include atoms.set-grid(0, max-content 1fr);
-    grid-template-areas:
-        "design-h3  design-nav";
+    @media screen and (min-width: $media-medium) {
+        @include mixins.set-grid(0, max-content 1fr);
+        grid-template-areas:
+            "design-h3  design-nav";
+    }
+    a:last-child { padding-left: .5em; }
     nav ul {
-        @include atoms.set-grid(0, repeat(auto-fit, minmax(200px, 1fr)));
+        @include mixins.set-grid(0, repeat(2, 1fr));
+        @media screen and (min-width: $media-medium) {
+            @include mixins.set-grid(0, repeat(auto-fit, minmax(175px, 1fr)));
+        }
         li {
-            @include atoms.set-grid(0, min-content 1fr);
+            @include mixins.set-grid(0, min-content 1fr);
             margin: .5em;
+            
             grid-template-areas:
                 "title title"
                 "by author";
@@ -82,21 +128,84 @@ header {
     }
 }
 
-.zen-resources {
-    @include atoms.set-grid(0, max-content 1fr);
-    grid-template-areas:
-        "resources-h3  resources-ul";
-    ul {
+.design-archives {
+    @include mixins.set-grid(0, max-content 1fr);
+    h3 { align-self: center; }
+    nav ul {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-        // @include atoms.set-grid(0, repeat(auto-fit, minmax(200px, 1fr)));
+        justify-content: flex-start;
+        // @include mixins.set-grid(0, repeat(auto-fit, minmax(200px, 1fr)));
         li {
             margin: .5em;
         }
     }
 }
 
+.zen-resources {
+    @media screen and (min-width: $media-medium) {
+        @include mixins.set-grid(0, max-content 1fr);
+        grid-template-areas:
+            "r-h3  r-ul";
+    }
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        // @include mixins.set-grid(0, repeat(auto-fit, minmax(200px, 1fr)));
+        li {
+            margin: .5em;
+        }
+    }
+}
+
+.main {
+    @include mixins.set-grid(0, 1fr);
+    grid-template-areas: 
+    "explanation"
+    "participation"
+    "black-box"
+    "benefits"
+    "requirements"
+    "footer";
+}
+
+@media screen and (min-width: $media-medium) {
+    .requirements {
+        @include mixins.set-grid(0, repeat(6, 1fr));
+        grid-template-areas: 
+            "req-h3 req-h3 req-p1 req-p1 req-p1 req-p1"
+            ". . req-p2 req-p2 req-p2 req-p2"
+            ". . req-p3 req-p3 req-p3 req-p3"
+            ". . req-p4 req-p4 req-p4 req-p4"
+            ". . req-p5 req-p5 req-p5 req-p5";
+    }        
+}
+
+
+// this is the black square behind the benefits header
+.main::after, .benefits {
+    grid-row-start: 3;
+}
+
+.main::after {
+    z-index: -1;
+}
+
+@media screen and (min-width: $media-medium) {
+    .benefits { 
+        @include mixins.set-grid(0, repeat(3, 1fr));
+        grid-template-areas: 
+            "b-h3 b-p b-p";
+}
+}
+
+// .main {
+//     @include mixins.set-grid(0, 1fr);
+//     // ::after {
+
+//     // }
+// }
 
 
 
