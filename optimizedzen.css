@@ -1,3 +1,4 @@
+/*** uncss> filename: style.css ***/
 /* VARIABLES */
 @import url("https://fonts.googleapis.com/css2?family=Exo+2&family=Rubik+Vinyl");
 /* MIXINS */ /* ANIMATIONS */ /* ORGANISMS */ /* Framework of Site - Grid, Flexbox, etc. */
@@ -46,10 +47,6 @@ header {
   grid-area: benefits;
 }
 
-requirements {
-  grid-area: requirements;
-}
-
 footer {
   grid-area: footer;
 }
@@ -78,14 +75,6 @@ footer {
   grid-area: design-nav;
 }
 
-.design-archives h3 {
-  grid-area: archive-h3;
-}
-
-.design-archives nav {
-  grid-area: archive-nav;
-}
-
 .benefits h3 {
   grid-area: b-h3;
 }
@@ -98,7 +87,7 @@ footer {
   grid-area: req-h3;
 }
 
-.requirements p:first-of-type {
+.requirements p:nth-of-type(1) {
   grid-area: req-p1;
 }
 
@@ -130,15 +119,11 @@ footer {
   grid-area: title;
 }
 
-.design-selection #text {
-  grid-area: by;
-}
-
 .design-selection a:last-child {
   grid-area: author;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 700px) {
   .page-wrapper {
     display: grid;
     grid-gap: 0;
@@ -153,7 +138,7 @@ footer {
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas: "header header header" ". summary summary" "enlightenment enlightenment enlightenment";
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 700px) {
   .intro {
     display: grid;
     grid-gap: 0;
@@ -162,19 +147,13 @@ footer {
   }
 }
 
-.summary {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
 header {
   display: grid;
   grid-gap: 0;
   grid-template-columns: repeat(4, 1fr);
   grid-template-areas: "h1 h1 . ." "h2 h2 h2 h2";
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 700px) {
   header {
     display: grid;
     grid-gap: 0;
@@ -182,11 +161,11 @@ header {
     grid-template-areas: "h1 h1 h2 h2 h2 h2";
   }
   header h1 {
-    min-width: max-content;
+    min-width: 340px;
   }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 700px) {
   .wrapper {
     display: grid;
     grid-gap: 0;
@@ -195,7 +174,7 @@ header {
   }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 700px) {
   .design-selection {
     display: grid;
     grid-gap: 0;
@@ -211,7 +190,7 @@ header {
   grid-gap: 0;
   grid-template-columns: repeat(2, 1fr);
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 700px) {
   .design-selection nav ul {
     display: grid;
     grid-gap: 0;
@@ -229,8 +208,7 @@ header {
 .design-archives {
   display: grid;
   grid-gap: 0;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas: "archive-h3 archive-nav archive-nav";
+  grid-template-columns: max-content 1fr;
 }
 .design-archives h3 {
   align-self: center;
@@ -241,14 +219,10 @@ header {
   justify-content: flex-start;
 }
 .design-archives nav ul li {
-  display: flex;
-}
-.design-archives nav ul li a {
-  width: max-content;
   margin: 0.5em;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 700px) {
   .zen-resources {
     display: grid;
     grid-gap: 0;
@@ -272,17 +246,12 @@ header {
   grid-template-areas: "explanation" "participation" "black-box" "benefits" "requirements" "footer";
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 700px) {
   .requirements {
     display: grid;
     grid-gap: 0;
     grid-template-columns: repeat(6, 1fr);
     grid-template-areas: "req-h3 req-h3 req-p1 req-p1 req-p1 req-p1" ". . req-p2 req-p2 req-p2 req-p2" ". . req-p3 req-p3 req-p3 req-p3" ". . req-p4 req-p4 req-p4 req-p4" ". . req-p5 req-p5 req-p5 req-p5";
-  }
-  footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
   }
 }
 /* this is the start of the black square coding behind the benefits header */
@@ -294,7 +263,7 @@ header {
   z-index: -1;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 700px) {
   .benefits {
     display: grid;
     grid-gap: 0;
@@ -351,7 +320,7 @@ h1::after {
   font-size: 2em;
   margin: 0;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 700px) {
   .intro header h1 {
     text-align: right;
   }
@@ -362,22 +331,14 @@ h1::after {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 700px) {
   .preamble p:last-of-type {
     padding-bottom: 2em;
     margin-bottom: 0;
     border-bottom: 10px solid #C93565;
   }
-}
-@media screen and (min-width: 800px) {
-  #zen-summary {
-    padding-left: 0px;
-  }
-  #design-archives {
-    padding-right: 0px;
-  }
-  #design-archives ul {
-    padding-left: 0.25em;
+  .summary {
+    align-content: flex-end;
   }
 }
 abbr {
@@ -399,9 +360,8 @@ abbr {
 }
 
 #zen-requirements h3 {
-  width: max-content;
   text-align: center;
-  margin: 2em auto;
+  margin: 2em;
   padding: 2em;
   background-color: #E56B44;
 }
@@ -414,40 +374,15 @@ abbr {
   background-color: #000;
 }
 
-footer {
-  margin-bottom: 15em;
-}
-
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 700px) {
   .main::after {
-    height: 16em;
-    width: 35%;
+    height: 15em;
+    width: 33%;
     background-color: #000;
   }
   .benefits h3 {
     align-self: center;
     justify-self: left;
-  }
-  .benefits p {
-    padding-left: 1em;
-  }
-  #zen-requirements h3 {
-    align-self: center;
-    margin: 1em;
-    margin-top: 1vh;
-  }
-  .requirements p {
-    padding-left: 1em;
-  }
-  .requirements p:first-of-type {
-    margin-top: 1vh;
-  }
-  footer {
-    background-color: #C93565;
-    margin-bottom: 0;
-  }
-  footer a {
-    color: white;
   }
 }
 .benefits {
@@ -474,7 +409,7 @@ footer {
   padding: 0;
   align-content: center;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 700px) {
   .design-selection ul {
     padding-left: 2em;
   }
@@ -484,9 +419,6 @@ footer {
   margin: 0;
   background-color: #E56B44;
   color: #FFF;
-}
-.wrapper > h3 {
-  background-color: #E56B44;
 }
 .wrapper a {
   color: #FFF;
@@ -513,7 +445,7 @@ footer {
   align-self: center;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 700px) {
   .zen-resources {
     background-color: #E56B44;
   }
@@ -533,7 +465,7 @@ footer {
 .participation a {
   color: #FFF;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 700px) {
   .participation {
     margin: 10px 20px;
   }
@@ -550,4 +482,9 @@ footer {
   list-style: none;
 }
 
+footer {
+  margin-bottom: 15em;
+}
+
 /*# sourceMappingURL=style.css.map */
+

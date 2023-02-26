@@ -25,7 +25,7 @@ h2 {
 body {
     margin: 0px;
     padding: 0px;
-    // background-image: url("background-leaves.png");
+    background-image: url("background-leaves.png");
     background-color: $color-background;
     background-repeat: no-repeat;
     background-position: center;
@@ -58,6 +58,8 @@ h1::after {
                 // padding-left: $div-padding;
             }
             h2 {
+                padding: calc($div-padding/2);
+                padding-bottom: calc($div-padding/4);
                 padding-left: 0;
             }
         }
@@ -73,11 +75,21 @@ h1::after {
         margin-bottom: 0;
         border-bottom: 10px solid $color-accent4;
     }
-    .summary {
-        align-content: flex-end;
-    }
 }
 
+@media screen and (min-width: $media-medium) {
+    #zen-summary {
+        padding-left: 0px;
+    }
+
+    #design-archives {
+        padding-right: 0px;
+        ul {
+            padding-left: .25em;
+        }
+    }
+
+}
 
 abbr{
     text-decoration: none;
@@ -100,8 +112,9 @@ abbr{
 }
 
 #zen-requirements h3 {
+    width: max-content;
     text-align: center;
-    margin: 2em;
+    margin: 2em auto;
     padding: 2em;
     background-color: $color-accent3;
 }
@@ -114,16 +127,50 @@ abbr{
     background-color: $dark;
 }
 
+footer {
+    margin-bottom: 15em;
+}
+
 @media screen and (min-width: $media-medium) {
     .main::after {
-        height: 15em;
-        width: 33%;
+        height: 16em;
+        width: 35%;
         background-color: $dark;
     }
-
-    .benefits h3 {
-        align-self: center;
+    .benefits {
+        h3 {
+            align-self: center;
+            justify-self: left;
+        }
+        p {
+            padding-left: 1em;
+        }
     }
+
+    #zen-requirements h3 {
+        align-self: center;
+        margin: 1em;
+        margin-top: 1vh;
+    }
+
+    .requirements p {
+        padding-left: 1em;
+    }
+    .requirements p:first-of-type {
+        margin-top: 1vh;
+    } 
+
+    footer {
+        background-color: $color-accent4;
+        margin-bottom: 0;
+        a {
+            color: white;         
+        }
+    }
+}
+
+@media screen and (min-width: $media-large) {
+
 }
 
 .benefits {
@@ -198,6 +245,3 @@ abbr{
     li { list-style: none; }
 }
 
-footer {
-    margin-bottom: 15em;
-}

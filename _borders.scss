@@ -1,3 +1,5 @@
+// These are not being loaded into the final styles.scss. 
+// This was only to help me see the html containers for the CSS Zen Garden website.
 
 @mixin solid-border($color) {
     border: 2px solid $color;

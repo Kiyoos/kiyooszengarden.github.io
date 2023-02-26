@@ -36,13 +36,17 @@ footer { grid-area: footer; }
 .design-selection h3 { grid-area: design-h3; }
 .design-selection nav { grid-area: design-nav; }
 
+// design-selection grid area
+.design-archives h3 { grid-area: archive-h3; }
+.design-archives nav { grid-area: archive-nav; }
+
 // benefits grid area
 .benefits h3 { grid-area: b-h3; }
 .benefits p { grid-area: b-p; }
 
 // requirements grid area
 .requirements h3 { grid-area: req-h3; }
-.requirements p:nth-of-type(1) { grid-area: req-p1; }
+.requirements p:first-of-type { grid-area: req-p1; }
 .requirements p:nth-of-type(2) { grid-area: req-p2; }
 .requirements p:nth-of-type(3) { grid-area: req-p3; }
 .requirements p:nth-of-type(4) { grid-area: req-p4; }
@@ -81,10 +85,14 @@ footer { grid-area: footer; }
     }
 }
 
-// .summary {
-//     display: grid;
-//     grid-template-rows: 1fr 2fr 1fr;
-// }
+.summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    // @include mixins.set-grid(0, 1fr);
+    // grid-template-areas: 
+    //     ;
+}
 
 header {
     @include mixins.set-grid(0, repeat(4, 1fr));
@@ -92,7 +100,7 @@ header {
     @media screen and (min-width: $media-medium) {
         @include mixins.set-grid(0, repeat(6, 1fr));
         grid-template-areas: "h1 h1 h2 h2 h2 h2";
-        h1 { min-width: 340px; }
+        h1 { min-width: max-content; }
     }
 }
 
@@ -129,15 +137,23 @@ header {
 }
 
 .design-archives {
-    @include mixins.set-grid(0, max-content 1fr);
+    @include mixins.set-grid(0, 1fr 1fr 1fr);
+    grid-template-areas:  "archive-h3 archive-nav archive-nav";
     h3 { align-self: center; }
     nav ul {
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
-        // @include mixins.set-grid(0, repeat(auto-fit, minmax(200px, 1fr)));
+        // @include mixins.set-grid(0, repeat(auto-fit, minmax(150px, 1fr)));
+        @media screen and (min-width: $media-medium) {
+            // @include mixins.set-grid(0, 1fr 1fr);
+        }
         li {
-            margin: .5em;
+            display: flex;
+            a {
+                width: max-content;
+                margin: .5em;
+            }
         }
     }
 }
@@ -179,11 +195,17 @@ header {
             ". . req-p3 req-p3 req-p3 req-p3"
             ". . req-p4 req-p4 req-p4 req-p4"
             ". . req-p5 req-p5 req-p5 req-p5";
-    }        
+    }  
+    
+    footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
 }
 
 
-// this is the black square behind the benefits header
+/* this is the start of the black square coding behind the benefits header */
 .main::after, .benefits {
     grid-row-start: 3;
 }
@@ -197,18 +219,7 @@ header {
         @include mixins.set-grid(0, repeat(3, 1fr));
         grid-template-areas: 
             "b-h3 b-p b-p";
+    }
 }
-}
-
-// .main {
-//     @include mixins.set-grid(0, 1fr);
-//     // ::after {
-
-//     // }
-// }
-
-
-
-
-// *******  look at putting in a media break at 780px, because of the H1 & H2
+/* end of black square coding */
 

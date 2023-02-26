@@ -1,0 +1,132 @@
+
+style.css
+   [2m3:1[22m   [31m[31m✖[39m  Expected empty line before comment                                                              [2mcomment-empty-line-before[22m
+   [2m3:14[22m  [31m[31m✖[39m  Expected empty line before comment                                                              [2mcomment-empty-line-before[22m
+   [2m3:31[22m  [31m[31m✖[39m  Expected empty line before comment                                                              [2mcomment-empty-line-before[22m
+   [2m3:47[22m  [31m[31m✖[39m  Expected empty line before comment                                                              [2mcomment-empty-line-before[22m
+   [2m4:1[22m   [31m[31m✖[39m  Expected empty line before comment                                                              [2mcomment-empty-line-before[22m
+  [2m49:1[22m   [31m[31m✖[39m  Unexpected unknown type selector "requirements"                                                 [2mselector-type-no-unknown[22m
+ [2m142:1[22m   [31m[31m✖[39m  Unexpected duplicate selector ".intro", first used at line 5                                    [2mno-duplicate-selectors[22m
+ [2m148:1[22m   [31m[31m✖[39m  Expected empty line before at-rule                                                              [2mat-rule-empty-line-before[22m
+ [2m157:1[22m   [31m[31m✖[39m  Unexpected duplicate selector "header", first used at line 17                                   [2mno-duplicate-selectors[22m
+ [2m163:1[22m   [31m[31m✖[39m  Expected empty line before at-rule                                                              [2mat-rule-empty-line-before[22m
+ [2m170:3[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m192:1[22m   [31m[31m✖[39m  Unexpected duplicate selector ".design-selection a:last-child", first used at line 129          [2mno-duplicate-selectors[22m
+ [2m192:1[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m195:1[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m200:1[22m   [31m[31m✖[39m  Expected empty line before at-rule                                                              [2mat-rule-empty-line-before[22m
+ [2m207:1[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m215:1[22m   [31m[31m✖[39m  Unexpected duplicate selector ".design-archives", first used at line 65                         [2mno-duplicate-selectors[22m
+ [2m220:1[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m223:1[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m228:1[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m240:1[22m   [31m[31m✖[39m  Expected selector ".zen-resources ul" to come before selector ".design-selection nav ul"        [2mno-descending-specificity[22m
+ [2m240:1[22m   [31m[31m✖[39m  Expected selector ".zen-resources ul" to come before selector ".design-archives nav ul"         [2mno-descending-specificity[22m
+ [2m240:1[22m   [31m[31m✖[39m  Unexpected duplicate selector ".zen-resources ul", first used at line 117                       [2mno-duplicate-selectors[22m
+ [2m240:1[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m245:1[22m   [31m[31m✖[39m  Expected selector ".zen-resources ul li" to come before selector ".design-selection nav ul li"  [2mno-descending-specificity[22m
+ [2m245:1[22m   [31m[31m✖[39m  Expected selector ".zen-resources ul li" to come before selector ".design-archives nav ul li"   [2mno-descending-specificity[22m
+ [2m245:1[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m249:1[22m   [31m[31m✖[39m  Unexpected duplicate selector ".main", first used at line 9                                     [2mno-duplicate-selectors[22m
+ [2m264:1[22m   [31m[31m✖[39m  Expected empty line before comment                                                              [2mcomment-empty-line-before[22m
+ [2m269:1[22m   [31m[31m✖[39m  Unexpected duplicate selector ".main::after", first used at line 57                             [2mno-duplicate-selectors[22m
+ [2m281:1[22m   [31m[31m✖[39m  Expected empty line before comment                                                              [2mcomment-empty-line-before[22m
+ [2m282:1[22m   [31m[31m✖[39m  Expected empty line before comment                                                              [2mcomment-empty-line-before[22m
+ [2m283:1[22m   [31m[31m✖[39m  Expected empty line before comment                                                              [2mcomment-empty-line-before[22m
+ [2m288:1[22m   [31m[31m✖[39m  Expected selector "h1" to come before selector ".intro h1"                                      [2mno-descending-specificity[22m
+ [2m293:1[22m   [31m[31m✖[39m  Expected selector "h2" to come before selector ".intro h2"                                      [2mno-descending-specificity[22m
+ [2m299:12[22m  [31m[31m✖[39m  Unexpected unit                                                                                 [2mlength-zero-no-unit[22m
+ [2m300:13[22m  [31m[31m✖[39m  Unexpected unit                                                                                 [2mlength-zero-no-unit[22m
+ [2m309:1[22m   [31m[31m✖[39m  Expected selector "h1" to come before selector ".intro h1"                                      [2mno-descending-specificity[22m
+ [2m309:5[22m   [31m[31m✖[39m  Expected selector "h2" to come before selector ".intro h2"                                      [2mno-descending-specificity[22m
+ [2m309:9[22m   [31m[31m✖[39m  Expected selector "h3" to come before selector ".design-selection h3"                           [2mno-descending-specificity[22m
+ [2m309:9[22m   [31m[31m✖[39m  Expected selector "h3" to come before selector ".benefits h3"                                   [2mno-descending-specificity[22m
+ [2m309:9[22m   [31m[31m✖[39m  Expected selector "h3" to come before selector ".requirements h3"                               [2mno-descending-specificity[22m
+ [2m309:9[22m   [31m[31m✖[39m  Expected selector "h3" to come before selector ".zen-resources h3"                              [2mno-descending-specificity[22m
+ [2m309:9[22m   [31m[31m✖[39m  Expected selector "h3" to come before selector ".design-archives h3"                            [2mno-descending-specificity[22m
+ [2m315:1[22m   [31m[31m✖[39m  Expected selector "h3" to come before selector ".design-selection h3"                           [2mno-descending-specificity[22m
+ [2m315:1[22m   [31m[31m✖[39m  Expected selector "h3" to come before selector ".benefits h3"                                   [2mno-descending-specificity[22m
+ [2m315:1[22m   [31m[31m✖[39m  Expected selector "h3" to come before selector ".requirements h3"                               [2mno-descending-specificity[22m
+ [2m315:1[22m   [31m[31m✖[39m  Expected selector "h3" to come before selector ".zen-resources h3"                              [2mno-descending-specificity[22m
+ [2m315:1[22m   [31m[31m✖[39m  Expected selector "h3" to come before selector ".design-archives h3"                            [2mno-descending-specificity[22m
+ [2m326:1[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m330:1[22m   [31m[31m✖[39m  Expected empty line before at-rule                                                              [2mat-rule-empty-line-before[22m
+ [2m334:3[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m347:3[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m351:1[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m376:1[22m   [31m[31m✖[39m  Unexpected duplicate selector ".main::after", first used at line 57                             [2mno-duplicate-selectors[22m
+ [2m390:3[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m395:1[22m   [31m[31m✖[39m  Unexpected duplicate selector ".benefits", first used at line 45                                [2mno-duplicate-selectors[22m
+ [2m395:1[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m399:1[22m   [31m[31m✖[39m  Expected selector ".benefits h3" to come before selector "#zen-preamble h3"                     [2mno-descending-specificity[22m
+ [2m399:1[22m   [31m[31m✖[39m  Expected selector ".benefits h3" to come before selector "#zen-explanation h3"                  [2mno-descending-specificity[22m
+ [2m399:1[22m   [31m[31m✖[39m  Expected selector ".benefits h3" to come before selector "#zen-requirements h3"                 [2mno-descending-specificity[22m
+ [2m399:1[22m   [31m[31m✖[39m  Unexpected duplicate selector ".benefits h3", first used at line 81                             [2mno-duplicate-selectors[22m
+ [2m399:1[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m405:1[22m   [31m[31m✖[39m  Unexpected duplicate selector ".design-selection", first used at line 61                        [2mno-duplicate-selectors[22m
+ [2m409:1[22m   [31m[31m✖[39m  Expected selector ".design-selection > h3" to come before selector "#zen-preamble h3"           [2mno-descending-specificity[22m
+ [2m409:1[22m   [31m[31m✖[39m  Expected selector ".design-selection > h3" to come before selector "#zen-explanation h3"        [2mno-descending-specificity[22m
+ [2m409:1[22m   [31m[31m✖[39m  Expected selector ".design-selection > h3" to come before selector "#zen-requirements h3"       [2mno-descending-specificity[22m
+ [2m409:1[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m412:1[22m   [31m[31m✖[39m  Expected selector ".design-selection h3" to come before selector "#zen-preamble h3"             [2mno-descending-specificity[22m
+ [2m412:1[22m   [31m[31m✖[39m  Expected selector ".design-selection h3" to come before selector "#zen-explanation h3"          [2mno-descending-specificity[22m
+ [2m412:1[22m   [31m[31m✖[39m  Expected selector ".design-selection h3" to come before selector "#zen-requirements h3"         [2mno-descending-specificity[22m
+ [2m412:1[22m   [31m[31m✖[39m  Unexpected duplicate selector ".design-selection h3", first used at line 73                     [2mno-duplicate-selectors[22m
+ [2m412:1[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m415:1[22m   [31m[31m✖[39m  Expected selector ".design-selection ul" to come before selector ".design-selection nav ul"     [2mno-descending-specificity[22m
+ [2m415:1[22m   [31m[31m✖[39m  Expected selector ".design-selection ul" to come before selector ".design-archives nav ul"      [2mno-descending-specificity[22m
+ [2m415:1[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m419:1[22m   [31m[31m✖[39m  Expected empty line before at-rule                                                              [2mat-rule-empty-line-before[22m
+ [2m430:1[22m   [31m[31m✖[39m  Expected selector ".wrapper > h3" to come before selector "#zen-preamble h3"                    [2mno-descending-specificity[22m
+ [2m430:1[22m   [31m[31m✖[39m  Expected selector ".wrapper > h3" to come before selector "#zen-explanation h3"                 [2mno-descending-specificity[22m
+ [2m430:1[22m   [31m[31m✖[39m  Expected selector ".wrapper > h3" to come before selector "#zen-requirements h3"                [2mno-descending-specificity[22m
+ [2m430:1[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m433:1[22m   [31m[31m✖[39m  Expected selector ".wrapper a" to come before selector ".design-selection a:first-child"        [2mno-descending-specificity[22m
+ [2m433:1[22m   [31m[31m✖[39m  Expected selector ".wrapper a" to come before selector ".design-selection a:last-child"         [2mno-descending-specificity[22m
+ [2m433:1[22m   [31m[31m✖[39m  Expected selector ".wrapper a" to come before selector ".design-selection a:last-child"         [2mno-descending-specificity[22m
+ [2m433:1[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m437:1[22m   [31m[31m✖[39m  Expected selector ".design-archives ul" to come before selector ".design-selection nav ul"      [2mno-descending-specificity[22m
+ [2m437:1[22m   [31m[31m✖[39m  Expected selector ".design-archives ul" to come before selector ".design-archives nav ul"       [2mno-descending-specificity[22m
+ [2m442:1[22m   [31m[31m✖[39m  Unexpected duplicate selector ".zen-resources", first used at line 69                           [2mno-duplicate-selectors[22m
+ [2m445:1[22m   [31m[31m✖[39m  Expected selector ".zen-resources > h3" to come before selector "#zen-preamble h3"              [2mno-descending-specificity[22m
+ [2m445:1[22m   [31m[31m✖[39m  Expected selector ".zen-resources > h3" to come before selector "#zen-explanation h3"           [2mno-descending-specificity[22m
+ [2m445:1[22m   [31m[31m✖[39m  Expected selector ".zen-resources > h3" to come before selector "#zen-requirements h3"          [2mno-descending-specificity[22m
+ [2m445:1[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m448:1[22m   [31m[31m✖[39m  Expected selector ".zen-resources h3" to come before selector "#zen-preamble h3"                [2mno-descending-specificity[22m
+ [2m448:1[22m   [31m[31m✖[39m  Expected selector ".zen-resources h3" to come before selector "#zen-explanation h3"             [2mno-descending-specificity[22m
+ [2m448:1[22m   [31m[31m✖[39m  Expected selector ".zen-resources h3" to come before selector "#zen-requirements h3"            [2mno-descending-specificity[22m
+ [2m448:1[22m   [31m[31m✖[39m  Unexpected duplicate selector ".zen-resources h3", first used at line 113                       [2mno-duplicate-selectors[22m
+ [2m448:1[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m451:1[22m   [31m[31m✖[39m  Expected selector ".zen-resources ul" to come before selector ".design-selection nav ul"        [2mno-descending-specificity[22m
+ [2m451:1[22m   [31m[31m✖[39m  Expected selector ".zen-resources ul" to come before selector ".design-archives nav ul"         [2mno-descending-specificity[22m
+ [2m451:1[22m   [31m[31m✖[39m  Unexpected duplicate selector ".zen-resources ul", first used at line 117                       [2mno-duplicate-selectors[22m
+ [2m451:1[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m454:1[22m   [31m[31m✖[39m  Expected selector ".zen-resources li" to come before selector ".design-selection nav ul li"     [2mno-descending-specificity[22m
+ [2m454:1[22m   [31m[31m✖[39m  Expected selector ".zen-resources li" to come before selector ".design-archives nav ul li"      [2mno-descending-specificity[22m
+ [2m454:1[22m   [31m[31m✖[39m  Expected selector ".zen-resources li" to come before selector ".zen-resources ul li"            [2mno-descending-specificity[22m
+ [2m454:1[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m462:3[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m465:3[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m469:1[22m   [31m[31m✖[39m  Unexpected duplicate selector ".participation", first used at line 41                           [2mno-duplicate-selectors[22m
+ [2m469:1[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m475:1[22m   [31m[31m✖[39m  Expected selector ".participation a" to come before selector ".design-selection a:first-child"  [2mno-descending-specificity[22m
+ [2m475:1[22m   [31m[31m✖[39m  Expected selector ".participation a" to come before selector ".design-selection a:last-child"   [2mno-descending-specificity[22m
+ [2m475:1[22m   [31m[31m✖[39m  Expected selector ".participation a" to come before selector ".design-selection a:last-child"   [2mno-descending-specificity[22m
+ [2m475:1[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m478:1[22m   [31m[31m✖[39m  Expected empty line before at-rule                                                              [2mat-rule-empty-line-before[22m
+ [2m483:1[22m   [31m[31m✖[39m  Expected selector ".participation > h3" to come before selector "#zen-preamble h3"              [2mno-descending-specificity[22m
+ [2m483:1[22m   [31m[31m✖[39m  Expected selector ".participation > h3" to come before selector "#zen-explanation h3"           [2mno-descending-specificity[22m
+ [2m483:1[22m   [31m[31m✖[39m  Expected selector ".participation > h3" to come before selector "#zen-requirements h3"          [2mno-descending-specificity[22m
+ [2m483:1[22m   [31m[31m✖[39m  Expected empty line before rule                                                                 [2mrule-empty-line-before[22m
+ [2m487:1[22m   [31m[31m✖[39m  Expected selector "* a" to come before selector ".design-selection a:first-child"               [2mno-descending-specificity[22m
+ [2m487:1[22m   [31m[31m✖[39m  Expected selector "* a" to come before selector ".design-selection a:last-child"                [2mno-descending-specificity[22m
+ [2m487:1[22m   [31m[31m✖[39m  Expected selector "* a" to come before selector ".design-selection a:last-child"                [2mno-descending-specificity[22m
+ [2m487:1[22m   [31m[31m✖[39m  Expected selector "* a" to come before selector ".wrapper a"                                    [2mno-descending-specificity[22m
+ [2m487:1[22m   [31m[31m✖[39m  Expected selector "* a" to come before selector ".participation a"                              [2mno-descending-specificity[22m
+ [2m491:1[22m   [31m[31m✖[39m  Expected selector ".sidebar li" to come before selector ".design-selection nav ul li"           [2mno-descending-specificity[22m
+ [2m491:1[22m   [31m[31m✖[39m  Expected selector ".sidebar li" to come before selector ".design-archives nav ul li"            [2mno-descending-specificity[22m
+ [2m491:1[22m   [31m[31m✖[39m  Expected selector ".sidebar li" to come before selector ".zen-resources ul li"                  [2mno-descending-specificity[22m
+ [2m495:1[22m   [31m[31m✖[39m  Unexpected duplicate selector "footer", first used at line 53                                   [2mno-duplicate-selectors[22m
+
+127 problems ([31m127 errors[39m, [33m0 warnings[39m)
+
