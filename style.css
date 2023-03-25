@@ -141,6 +141,10 @@ footer {
   grid-area: req-p5;
 }
 
+.requirements::after {
+  grid-area: req-vol;
+}
+
 .zen-resources h3 {
   grid-area: r-h3;
 }
@@ -300,7 +304,7 @@ header {
     display: grid;
     grid-gap: 0;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-areas: "req-h3 req-h3 req-p1 req-p1 req-p1 req-p1" ". . req-p2 req-p2 req-p2 req-p2" ". . req-p3 req-p3 req-p3 req-p3" ". . req-p4 req-p4 req-p4 req-p4" ". . req-p5 req-p5 req-p5 req-p5";
+    grid-template-areas: "req-h3 req-h3 req-p1 req-p1 req-p1 req-p1" ". . req-p2 req-p2 req-p2 req-p2" ". . req-p3 req-p3 req-p3 req-p3" "req-vol req-vol req-p4 req-p4 req-p4 req-p4" "req-vol req-vol req-p5 req-p5 req-p5 req-p5";
   }
   footer {
     display: grid;
@@ -326,6 +330,40 @@ header {
   }
 }
 /* end of black square coding */
+/* Volcano's Lava in Requirements area */
+.requirements::before {
+  grid-row-start: 3;
+  grid-column-start: 1;
+}
+
+/* Images */
+.intro::after {
+  content: "";
+  background-image: url("../zengarden/images/dinoyellow.svg");
+  background-repeat: no-repeat;
+  transform: rotate(335deg);
+  width: 150px;
+  height: 150px;
+}
+
+.requirements::after {
+  content: "";
+  background-image: url("../zengarden/images/volcanobase.svg");
+  background-repeat: no-repeat;
+  align-self: end;
+  width: 300px;
+  height: 170px;
+}
+
+.requirements::before {
+  content: "";
+  background-image: url("../zengarden/images/volcanosplash.svg");
+  background-repeat: no-repeat;
+  margin-left: 25px;
+  width: 300px;
+  height: 170px;
+}
+
 /* CSS Zen Garden */
 /* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
 .main > *, .intro div, .wrapper div {
@@ -345,7 +383,7 @@ h2 {
 body {
   margin: 0px;
   padding: 0px;
-  background-image: url("background-leaves.png");
+  background-image: url("../zengarden/images/background-leaves.png");
   background-color: #DEECDA;
   background-repeat: no-repeat;
   background-position: center;
@@ -418,6 +456,7 @@ abbr {
 
 #zen-requirements {
   padding-top: 0;
+  padding-bottom: 0;
   margin-top: 0;
 }
 

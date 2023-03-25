@@ -5,6 +5,7 @@
 @use 'mixins';
 @use 'animations';
 @use 'framework';
+@use 'images';
 // @use 'borders';
 
 .main>*, .intro div, .wrapper div {
@@ -24,7 +25,8 @@ h2 {
 body {
     margin: 0px;
     padding: 0px;
-    background-image: url("background-leaves.png");
+    background-image: url("../zengarden/images/background-leaves.png");
+    // background-image: url("../zengarden/images/dinoyellow.svg");
     background-color: $color-background;
     background-repeat: no-repeat;
     background-position: center;
@@ -107,6 +109,7 @@ abbr{
 
 #zen-requirements {
     padding-top: 0;
+    padding-bottom: 0;
     margin-top: 0;
 }
 
@@ -247,13 +250,3 @@ footer {
     // ul { padding: 0; }
     li { list-style: none; }
 }
-
-// h1::after {
-//     // content: "testing";
-//     content: '';
-//     background-image: url("/test.svg");
-//     display: block;
-//     width: 200px;
-//     height: 200px;
-//     background-color:  white;
-// }

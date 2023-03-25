@@ -51,6 +51,7 @@ footer { grid-area: footer; }
 .requirements p:nth-of-type(3) { grid-area: req-p3; }
 .requirements p:nth-of-type(4) { grid-area: req-p4; }
 .requirements p:nth-of-type(5) { grid-area: req-p5; }
+.requirements::after { grid-area: req-vol; }
 
 // zen-resources grid area
 .zen-resources h3 { grid-area: r-h3; }
@@ -193,8 +194,8 @@ header {
             "req-h3 req-h3 req-p1 req-p1 req-p1 req-p1"
             ". . req-p2 req-p2 req-p2 req-p2"
             ". . req-p3 req-p3 req-p3 req-p3"
-            ". . req-p4 req-p4 req-p4 req-p4"
-            ". . req-p5 req-p5 req-p5 req-p5";
+            "req-vol req-vol req-p4 req-p4 req-p4 req-p4"
+            "req-vol req-vol req-p5 req-p5 req-p5 req-p5";
     }  
     
     footer {
@@ -221,3 +222,10 @@ header {
 }
 /* end of black square coding */
 
+
+/* Volcano's Lava in Requirements area */
+
+.requirements::before {
+    grid-row-start: 3;
+    grid-column-start: 1;
+}
