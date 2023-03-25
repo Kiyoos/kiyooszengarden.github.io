@@ -198,9 +198,7 @@ header {
     }  
     
     footer {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
+        @include mixins.set-grid(0, repeat(5, 1fr));
     }
 }
 

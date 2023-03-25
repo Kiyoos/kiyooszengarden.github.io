@@ -1,6 +1,29 @@
 /* VARIABLES */
 @import url("https://fonts.googleapis.com/css2?family=Exo+2&family=Rubik+Vinyl");
-/* MIXINS */ /* ANIMATIONS */ /* ORGANISMS */ /* Framework of Site - Grid, Flexbox, etc. */
+/* MIXINS */ /* ANIMATIONS */
+.wrapper li:hover, footer a:hover {
+  animation: shake 0.25s ease-in-out 2;
+  white-space: nowrap;
+}
+
+@keyframes shake {
+  0% {
+    padding: 0;
+  }
+  25% {
+    padding-left: 30px;
+  }
+  50% {
+    padding-left: 0;
+  }
+  75% {
+    padding-left: 20px;
+  }
+  100% {
+    padding: 0;
+  }
+}
+/* Framework of Site - Grid, Flexbox, etc. */
 /* Naming Grid Areas */
 .intro {
   grid-area: intro;
@@ -280,9 +303,9 @@ header {
     grid-template-areas: "req-h3 req-h3 req-p1 req-p1 req-p1 req-p1" ". . req-p2 req-p2 req-p2 req-p2" ". . req-p3 req-p3 req-p3 req-p3" ". . req-p4 req-p4 req-p4 req-p4" ". . req-p5 req-p5 req-p5 req-p5";
   }
   footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 /* this is the start of the black square coding behind the benefits header */
@@ -417,6 +440,9 @@ abbr {
 footer {
   margin-bottom: 15em;
 }
+footer a {
+  text-align: center;
+}
 
 @media screen and (min-width: 800px) {
   .main::after {
@@ -528,7 +554,7 @@ footer {
   padding-top: 2em;
   margin-bottom: 8em;
   color: #FFF;
-  background-color: #106C42;
+  background-image: linear-gradient(to bottom, #106C42, black);
 }
 .participation a {
   color: #FFF;
@@ -537,9 +563,6 @@ footer {
   .participation {
     margin: 10px 20px;
   }
-}
-.participation > h3 {
-  background-color: #106C42;
 }
 
 * a {

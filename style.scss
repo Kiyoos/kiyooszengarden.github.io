@@ -4,7 +4,6 @@
 @use 'variables' as *;
 @use 'mixins';
 @use 'animations';
-@use 'organisms';
 @use 'framework';
 // @use 'borders';
 
@@ -129,6 +128,9 @@ abbr{
 
 footer {
     margin-bottom: 15em;
+    a {
+        text-align: center;
+    }
 }
 
 @media screen and (min-width: $media-medium) {
@@ -226,7 +228,6 @@ footer {
     }
 }
 
-
 .participation {
     padding-top: 2em;
     margin-bottom: 8em;
@@ -235,7 +236,9 @@ footer {
     @media screen and (min-width: $media-medium) {
         margin: 10px 20px;
     }
-    @include mixins.same-background($color-accent1);
+    // @include mixins.same-background($color-accent1);
+    background-image: linear-gradient(to bottom, $color-accent1, black);
+
 }
 
 * a { text-decoration: none; }
@@ -245,3 +248,12 @@ footer {
     li { list-style: none; }
 }
 
+// h1::after {
+//     // content: "testing";
+//     content: '';
+//     background-image: url("/test.svg");
+//     display: block;
+//     width: 200px;
+//     height: 200px;
+//     background-color:  white;
+// }
