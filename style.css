@@ -69,7 +69,7 @@ header {
   grid-area: benefits;
 }
 
-requirements {
+.requirements {
   grid-area: requirements;
 }
 
@@ -107,6 +107,34 @@ footer {
 
 .design-archives nav {
   grid-area: archive-nav;
+}
+
+.explanation h3 {
+  grid-area: exp-h3;
+}
+
+.explanation p:first-of-type {
+  grid-area: exp-p1;
+}
+
+.explanation p:nth-of-type(2) {
+  grid-area: exp-p2;
+}
+
+.participation h3 {
+  grid-area: par-h3;
+}
+
+.participation p:first-of-type {
+  grid-area: par-p1;
+}
+
+.participation p:nth-of-type(2) {
+  grid-area: par-p2;
+}
+
+.participation p:nth-of-type(3) {
+  grid-area: par-p3;
 }
 
 .benefits h3 {
@@ -165,12 +193,18 @@ footer {
   grid-area: author;
 }
 
-@media screen and (min-width: 800px) {
+.page-wrapper {
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "intro  intro   intro" "intro  intro   intro" "intro  intro   intro" "main   main    main" "main   main    main" "main   main    main" "main   main    main" "main   main    main" "main   main    main" "main   main    main" "main   main    main" "sidebar sidebar sidebar" "sidebar sidebar sidebar" "sidebar sidebar sidebar" "sidebar sidebar sidebar";
+}
+@media screen and (min-width: 900px) {
   .page-wrapper {
     display: grid;
     grid-gap: 0;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-areas: "intro  intro   intro   intro   intro   intro" "sidebar sidebar sidebar sidebar sidebar sidebar" "main   main    main    main    main    main";
+    grid-template-areas: "intro  intro   intro   intro   intro   intro" "intro  intro   intro   intro   intro   intro" "intro  intro   intro   intro   intro   intro" "sidebar sidebar sidebar sidebar sidebar sidebar" "sidebar sidebar sidebar sidebar sidebar sidebar" "main   main    main    main    main    main" "main   main    main    main    main    main" "main   main    main    main    main    main" "main   main    main    main    main    main" "main   main    main    main    main    main" "main   main    main    main    main    main" "main   main    main    main    main    main" "main   main    main    main    main    main";
   }
 }
 
@@ -180,12 +214,15 @@ footer {
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas: "header header header" ". summary summary" "enlightenment enlightenment enlightenment";
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   .intro {
     display: grid;
     grid-gap: 0;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-areas: "header header header header header header" "enlightenment enlightenment enlightenment enlightenment summary summary";
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas: "header header header header header header header header" ". enlightenment enlightenment enlightenment enlightenment . . ." ". enlightenment enlightenment enlightenment enlightenment summary summary .";
+  }
+  .intro .preamble {
+    align-self: center;
   }
 }
 
@@ -199,9 +236,9 @@ header {
   display: grid;
   grid-gap: 0;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-areas: "h1 h1 . ." "h2 h2 h2 h2";
+  grid-template-areas: "h1 h1 . ." "h2 h2 h2 .";
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   header {
     display: grid;
     grid-gap: 0;
@@ -213,7 +250,7 @@ header {
   }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   .wrapper {
     display: grid;
     grid-gap: 0;
@@ -222,30 +259,33 @@ header {
   }
 }
 
-@media screen and (min-width: 800px) {
-  .design-selection {
+@media screen and (min-width: 900px) {
+  .wrapper .design-selection {
     display: grid;
     grid-gap: 0;
     grid-template-columns: max-content 1fr;
-    grid-template-areas: "design-h3  design-nav";
+    grid-template-areas: ".  design-nav" "design-h3  design-nav";
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
-.design-selection a:last-child {
+.wrapper .design-selection a:last-child {
   padding-left: 0.5em;
 }
-.design-selection nav ul {
+.wrapper .design-selection nav ul {
   display: grid;
   grid-gap: 0;
   grid-template-columns: repeat(2, 1fr);
 }
-@media screen and (min-width: 800px) {
-  .design-selection nav ul {
+@media screen and (min-width: 900px) {
+  .wrapper .design-selection nav ul {
     display: grid;
     grid-gap: 0;
     grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
   }
 }
-.design-selection nav ul li {
+.wrapper .design-selection nav ul li {
   display: grid;
   grid-gap: 0;
   grid-template-columns: min-content 1fr;
@@ -262,6 +302,9 @@ header {
 .design-archives h3 {
   align-self: center;
 }
+.design-archives nav {
+  align-self: center;
+}
 .design-archives nav ul {
   display: flex;
   flex-wrap: wrap;
@@ -275,7 +318,7 @@ header {
   margin: 0.5em;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   .zen-resources {
     display: grid;
     grid-gap: 0;
@@ -284,9 +327,9 @@ header {
   }
 }
 .zen-resources ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 .zen-resources ul li {
   margin: 0.5em;
@@ -295,11 +338,29 @@ header {
 .main {
   display: grid;
   grid-gap: 0;
-  grid-template-columns: 1fr;
-  grid-template-areas: "explanation" "participation" "black-box" "benefits" "requirements" "footer";
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-areas: ". explanation explanation explanation explanation explanation explanation ." ". participation participation participation participation participation participation ." "black-box black-box black-box . . . . ." ". benefits benefits benefits benefits benefits benefits ." ". requirements requirements requirements requirements requirements requirements ." "footer footer footer footer footer footer footer footer";
 }
 
-@media screen and (min-width: 800px) {
+.explanation {
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "exp-h3 exp-h3" "exp-p1 exp-p2";
+}
+
+.participation {
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: ".  par-p1 par-p1" "par-h3 par-p2 par-p2" "par-h3 par-p3 par-p3";
+}
+.participation h3 {
+  align-self: center;
+  justify-self: center;
+}
+
+@media screen and (min-width: 900px) {
   .requirements {
     display: grid;
     grid-gap: 0;
@@ -314,14 +375,14 @@ header {
 }
 /* this is the start of the black square coding behind the benefits header */
 .main::after, .benefits {
-  grid-row-start: 3;
+  grid-row: 3/5;
 }
 
 .main::after {
   z-index: -1;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   .benefits {
     display: grid;
     grid-gap: 0;
@@ -330,27 +391,116 @@ header {
   }
 }
 /* end of black square coding */
-/* Volcano's Lava in Requirements area */
+/* Volcano in Requirements area */
+.requirements::after {
+  align-self: end;
+  justify-self: center;
+}
+
 .requirements::before {
-  grid-row-start: 3;
-  grid-column-start: 1;
+  grid-row: 4/6;
+  grid-column: 1/3;
+  align-self: end;
+  justify-self: center;
+}
+
+/* End of Volcano */
+/* Orange Dino */
+.intro::after {
+  grid-row: 1/2;
+  grid-column: 2/4;
+  justify-self: end;
+  align-self: end;
+  margin-top: 1em;
+}
+@media screen and (min-width: 900px) {
+  .intro::after {
+    grid-row: 1/3;
+    grid-column: 6/8;
+    justify-self: center;
+  }
+}
+
+/* Yellow Dino */
+.design-selection::before {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  justify-self: end;
+  align-self: center;
+}
+
+.intro::before {
+  grid-row: 2/3;
+  grid-column: 1/2;
+  justify-self: end;
+  align-self: center;
+}
+
+.page-wrapper::before {
+  grid-row: 4/5;
+  grid-column: 3/4;
+  justify-self: center;
+  align-self: center;
+  transform: translateY(-50px);
+  order: 2;
+}
+@media screen and (min-width: 900px) {
+  .page-wrapper::before {
+    grid-row: 5/8;
+    grid-column: 5/7;
+    align-self: end;
+    transform: translateY(50px);
+  }
+}
+
+.benefits::before {
+  justify-self: center;
+  grid-row: 1;
+  grid-column: 3;
+  transform: translateY(-200px);
 }
 
 /* Images */
 .intro::after {
   content: "";
+  background-image: url("../zengarden/images/dinoorange.svg");
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 250px;
+}
+
+@media screen and (max-width: 500px) {
+  .intro::after {
+    content: "";
+    background-image: url("../zengarden/images/dinoorange.svg");
+    background-repeat: no-repeat;
+    width: 175px;
+    height: 175px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .intro::before {
+    content: "";
+    background-image: url("../zengarden/images/dinoyellow.svg");
+    background-repeat: no-repeat;
+    transform: scaleX(-1) rotate(340deg);
+    width: 150px;
+    height: 160px;
+  }
+}
+.design-selection::before {
+  content: "";
   background-image: url("../zengarden/images/dinoyellow.svg");
   background-repeat: no-repeat;
-  transform: rotate(335deg);
+  transform: scaleX(-1) rotate(340deg);
   width: 150px;
-  height: 150px;
+  height: 160px;
 }
 
 .requirements::after {
   content: "";
   background-image: url("../zengarden/images/volcanobase.svg");
   background-repeat: no-repeat;
-  align-self: end;
   width: 300px;
   height: 170px;
 }
@@ -359,15 +509,44 @@ header {
   content: "";
   background-image: url("../zengarden/images/volcanosplash.svg");
   background-repeat: no-repeat;
-  margin-left: 25px;
+  width: 200px;
+  height: 142px;
+}
+
+.page-wrapper::before {
+  content: "";
+  background-image: url("../zengarden/images/leaf.svg");
+  background-repeat: no-repeat;
+  width: 90px;
+  height: 90px;
+}
+
+.benefits::before {
+  content: "";
+  background-image: url("../zengarden/images/dinopink.svg");
+  background-repeat: no-repeat;
   width: 300px;
-  height: 170px;
+  height: 190px;
+}
+
+.benefits::before {
+  content: "";
+  background-image: url("../zengarden/images/dinopink.svg");
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 190px;
 }
 
 /* CSS Zen Garden */
 /* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
 .main > *, .intro div, .wrapper div {
   padding: 1em 2em;
+}
+
+p {
+  font-size: 1em;
+  max-width: 70ch;
+  padding-right: 1em;
 }
 
 h1 {
@@ -393,6 +572,7 @@ body {
 
 h1, h2, h3 {
   font-family: "Rubik Vinyl", cursive;
+  font-size: 1.5em;
   color: #FFF;
   font-weight: lighter;
 }
@@ -412,7 +592,7 @@ h1::after {
   font-size: 2em;
   margin: 0;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   .intro header h1 {
     text-align: right;
   }
@@ -423,16 +603,17 @@ h1::after {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   .preamble p:last-of-type {
     padding-bottom: 2em;
     margin-bottom: 0;
     border-bottom: 10px solid #C93565;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   #zen-summary {
     padding-left: 0px;
+    padding-top: 0px;
   }
   #design-archives {
     padding-right: 0px;
@@ -448,10 +629,6 @@ abbr {
 #zen-preamble h3, #zen-explanation h3 {
   color: #000;
   font-weight: bold;
-}
-
-#zen-explanation {
-  margin-bottom: 3em;
 }
 
 #zen-requirements {
@@ -471,7 +648,7 @@ abbr {
 .main::after {
   content: "";
   display: block;
-  height: 9.2em;
+  height: 100%;
   width: 100%;
   background-color: #000;
 }
@@ -483,10 +660,18 @@ footer a {
   text-align: center;
 }
 
-@media screen and (min-width: 800px) {
+.benefits {
+  margin: 2em;
+  border: 0.5em solid #C93565;
+}
+.benefits h3 {
+  text-align: center;
+  margin: 0;
+  padding: 2em;
+}
+
+@media screen and (min-width: 900px) {
   .main::after {
-    height: 16em;
-    width: 35%;
     background-color: #000;
   }
   .benefits h3 {
@@ -515,16 +700,6 @@ footer a {
     color: white;
   }
 }
-.benefits {
-  margin: 2em;
-  border: 0.5em solid #C93565;
-}
-.benefits h3 {
-  text-align: center;
-  margin: 0;
-  padding: 2em;
-}
-
 .design-selection {
   margin: 0;
   background-color: #5BB527;
@@ -533,13 +708,14 @@ footer a {
   background-color: #5BB527;
 }
 .design-selection h3 {
-  align-self: center;
+  align-self: start;
+  margin-top: 0;
 }
 .design-selection ul {
   padding: 0;
   align-content: center;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   .design-selection ul {
     padding-left: 2em;
   }
@@ -578,7 +754,7 @@ footer a {
   align-self: center;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   .zen-resources {
     background-color: #E56B44;
   }
@@ -591,17 +767,22 @@ footer a {
 }
 .participation {
   padding-top: 2em;
-  margin-bottom: 8em;
+  margin: auto;
+  margin-bottom: 5em;
   color: #FFF;
   background-image: linear-gradient(to bottom, #106C42, black);
 }
 .participation a {
   color: #FFF;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   .participation {
-    margin: 10px 20px;
+    margin: 50px 20px 120px 20px;
   }
+}
+.participation p {
+  margin-left: 1em;
+  padding: 1em;
 }
 
 * a {

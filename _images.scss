@@ -2,30 +2,87 @@
 
 /* Images */
 
-
+// Dino - Orange
 .intro::after {
+    content: '';
+    background-image: url("../zengarden/images/dinoorange.svg");
+    background-repeat: no-repeat;
+    width:250px;
+    height: 250px;
+}
+@media screen and (max-width: $media-small) {
+    .intro::after {
+        content: '';
+        background-image: url("../zengarden/images/dinoorange.svg");
+        background-repeat: no-repeat;
+        width:175px;
+        height: 175px;
+    }
+}
+
+// Dino - Yellow (small screen)
+@media screen and (max-width: $media-medium) {
+    .intro::before {
+        content: '';
+        background-image: url("../zengarden/images/dinoyellow.svg");
+        background-repeat: no-repeat;
+        transform: scaleX(-1) rotate(340deg);
+        width:150px;
+        height: 160px;
+    }
+}
+
+// Dino - Yellow (large screen)
+.design-selection::before {
     content: '';
     background-image: url("../zengarden/images/dinoyellow.svg");
     background-repeat: no-repeat;
-    transform: rotate(335deg);
-    width: 150px;
-    height: 150px;
+    transform: scaleX(-1) rotate(340deg);
+    width:150px;
+    height: 160px;
 }
 
+// Volcano
 .requirements::after {
     content: '';
     background-image: url("../zengarden/images/volcanobase.svg");
     background-repeat: no-repeat;
-    align-self: end;
     width: 300px;
     height: 170px;
 }
 
+// Lava
 .requirements::before {
     content: '';
     background-image: url("../zengarden/images/volcanosplash.svg");
     background-repeat: no-repeat;
-    margin-left: 25px;
+    width: 200px;
+    height: 142px;
+}
+
+// Leaf 
+.page-wrapper::before {
+    content: '';
+    background-image: url("../zengarden/images/leaf.svg");
+    background-repeat: no-repeat;
+    width: 90px;
+    height: 90px;
+}
+
+// Dino - Pink
+.benefits::before {
+    content: '';
+    background-image: url("../zengarden/images/dinopink.svg");
+    background-repeat: no-repeat;
     width: 300px;
-    height: 170px;
+    height: 190px;
+}
+
+// Dino - Egg
+.benefits::before {
+    content: '';
+    background-image: url("../zengarden/images/dinopink.svg");
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 190px;
 }

@@ -12,6 +12,12 @@
     padding: calc($div-padding/2) $div-padding;
 }
 
+p {
+    font-size: $font-size-body;
+    max-width: 70ch;
+    padding-right: 1em;
+}
+
 h1 {
     padding: calc($div-padding/2);
     padding-bottom: calc($div-padding/4);
@@ -26,7 +32,6 @@ body {
     margin: 0px;
     padding: 0px;
     background-image: url("../zengarden/images/background-leaves.png");
-    // background-image: url("../zengarden/images/dinoyellow.svg");
     background-color: $color-background;
     background-repeat: no-repeat;
     background-position: center;
@@ -36,6 +41,7 @@ body {
 
 h1, h2, h3 {
     font-family: $font-headers;
+    font-size: $font-size-headers;
     color: $light;
     font-weight: lighter;
 }
@@ -81,6 +87,7 @@ h1::after {
 @media screen and (min-width: $media-medium) {
     #zen-summary {
         padding-left: 0px;
+        padding-top: 0px;
     }
 
     #design-archives {
@@ -103,10 +110,6 @@ abbr{
     }
 }
 
-#zen-explanation {
-    margin-bottom: 3em;
-}
-
 #zen-requirements {
     padding-top: 0;
     padding-bottom: 0;
@@ -124,7 +127,7 @@ abbr{
 .main::after {
     content: "";
     display: block;
-    height: 9.2em;
+    height: 100%;
     width: 100%;
     background-color: $dark;
 }
@@ -136,13 +139,25 @@ footer {
     }
 }
 
+
+.benefits {
+    margin: 2em;
+    // background-color: $dark;
+    @include mixins.border ($color-accent4,$border-type,$border-thickness);
+    h3 {
+        text-align: center;
+        margin: 0;
+        padding: 2em;
+        // background-color: $dark;
+    }
+}
+
 @media screen and (min-width: $media-medium) {
     .main::after {
-        height: 16em;
-        width: 35%;
         background-color: $dark;
     }
     .benefits {
+        // margin-top: 500px;
         h3 {
             align-self: center;
             justify-self: left;
@@ -178,22 +193,14 @@ footer {
 
 }
 
-.benefits {
-    margin: 2em;
-    // background-color: $dark;
-    @include mixins.border ($color-accent4,$border-type,$border-thickness);
-    h3 {
-        text-align: center;
-        margin: 0;
-        padding: 2em;
-        // background-color: $dark;
-    }
-}
-
 .design-selection {
     margin: 0;
     @include mixins.same-background($color-accent2);
-    h3 { align-self: center; }
+    h3 { 
+        align-self: start;
+        margin-top: 0;
+        
+    }
     ul {
         padding: 0;
         align-content: center;
@@ -233,13 +240,17 @@ footer {
 
 .participation {
     padding-top: 2em;
-    margin-bottom: 8em;
+    margin: auto;
+    margin-bottom: 5em;
     color: $light;
     a { color: $light; }
     @media screen and (min-width: $media-medium) {
-        margin: 10px 20px;
+        margin: 50px 20px 120px 20px;
     }
-    // @include mixins.same-background($color-accent1);
+    p {
+        margin-left: 1em;
+        padding: 1em;
+    }
     background-image: linear-gradient(to bottom, $color-accent1, black);
 
 }
