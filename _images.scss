@@ -15,8 +15,8 @@
         content: '';
         background-image: url("../zengarden/images/dinoorange.svg");
         background-repeat: no-repeat;
-        width:175px;
-        height: 175px;
+        width:275px;
+        height: 275px;
     }
 }
 
@@ -79,10 +79,19 @@
 }
 
 // Dino - Egg
-.benefits::before {
+.supporting::before {
     content: '';
-    background-image: url("../zengarden/images/dinopink.svg");
+    background-image: url("../zengarden/images/dinoegg.svg");
     background-repeat: no-repeat;
-    width: 300px;
-    height: 190px;
+    width: 160px;
+    height: 200px;
+}
+
+// Dino - Tree
+.page-wrapper::after {
+    content: '';
+    background-image: url("../zengarden/images/palmtree.svg");
+    background-repeat: no-repeat;
+    width: 250px;
+    height: 340px;
 }
