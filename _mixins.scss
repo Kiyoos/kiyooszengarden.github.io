@@ -1,4 +1,4 @@
-/* MIXINS */
+// MIXINS 
 @use 'variables' as *;
 
 
@@ -20,15 +20,11 @@
     grid-template-columns: $grid-columns;
 }
 
-// FROM CLASS PATTERN STYLESHEET
-@mixin set-flex($direction: row, $wrap: wrap) {
-    display: flex;
-    flex-flow: $direction $wrap;
-  }
-
-@mixin uppercase($color: $text-dark) {
-    font-weight: 300;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: $color;
+@mixin set-image ($image, $width, $height){
+    content: '';
+    background-image: url($image);
+    background-repeat: no-repeat;
+    width: $width;
+    height: $height;
+    order: 1;
 }

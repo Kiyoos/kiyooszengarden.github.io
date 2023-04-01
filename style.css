@@ -1,29 +1,4 @@
-/* VARIABLES */
 @import url("https://fonts.googleapis.com/css2?family=Exo+2&family=Rubik+Vinyl");
-/* MIXINS */ /* ANIMATIONS */
-.wrapper li:hover, footer a:hover {
-  animation: shake 0.25s ease-in-out 2;
-  white-space: nowrap;
-}
-
-@keyframes shake {
-  0% {
-    padding: 0;
-  }
-  25% {
-    padding-left: 30px;
-  }
-  50% {
-    padding-left: 0;
-  }
-  75% {
-    padding-left: 20px;
-  }
-  100% {
-    padding: 0;
-  }
-}
-/* Framework of Site - Grid, Flexbox, etc. */
 /* Naming Grid Areas */
 .intro {
   grid-area: intro;
@@ -197,31 +172,33 @@ footer {
   grid-area: author;
 }
 
+/* End of Naming Grid Areas */
 .page-wrapper {
   display: grid;
   grid-gap: 0;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-areas: "intro  intro   intro" "intro  intro   intro" "intro  intro   intro" "main   main    main" "main   main    main" "main   main    main" "main   main    main" "main   main    main" "main   main    main" "main   main    main" "main   main    main" "sidebar sidebar sidebar" "sidebar sidebar sidebar" "sidebar sidebar sidebar" "sidebar sidebar sidebar";
+  grid-template-columns: 1fr;
+  grid-template-areas: "intro" "main" "sidebar";
 }
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 670px) {
   .page-wrapper {
     display: grid;
     grid-gap: 0;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-areas: "intro  intro   intro   intro   intro   intro" "intro  intro   intro   intro   intro   intro" "intro  intro   intro   intro   intro   intro" "sidebar sidebar sidebar sidebar sidebar sidebar" "sidebar sidebar sidebar sidebar sidebar sidebar" "main   main    main    main    main    main" "main   main    main    main    main    main" "main   main    main    main    main    main" "main   main    main    main    main    main" "main   main    main    main    main    main" "main   main    main    main    main    main" "main   main    main    main    main    main" "main   main    main    main    main    main";
+    grid-template-areas: "intro  intro   intro   intro   intro   intro" "sidebar sidebar sidebar sidebar sidebar sidebar" "main   main    main    main    main    main";
   }
 }
 
+/* Intro section */
 .intro {
   display: grid;
   grid-gap: 0;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-areas: "header header header" ". summary summary" "enlightenment enlightenment enlightenment";
+  grid-template-areas: "header header header" "summary summary summary" "enlightenment enlightenment enlightenment";
 }
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 670px) {
   .intro {
     display: grid;
-    grid-gap: 0;
+    grid-gap: 1em;
     grid-template-columns: repeat(8, 1fr);
     grid-template-areas: "header header header header header header header header" ". enlightenment enlightenment enlightenment enlightenment . . ." ". enlightenment enlightenment enlightenment enlightenment summary summary .";
   }
@@ -242,7 +219,7 @@ header {
   grid-template-columns: repeat(4, 1fr);
   grid-template-areas: "h1 h1 . ." "h2 h2 h2 .";
 }
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 670px) {
   header {
     display: grid;
     grid-gap: 0;
@@ -254,7 +231,9 @@ header {
   }
 }
 
-@media screen and (min-width: 900px) {
+/* End of Intro */
+/* Sidebar or Design, Archives, Resources Section */
+@media screen and (min-width: 670px) {
   .wrapper {
     display: grid;
     grid-gap: 0;
@@ -263,7 +242,7 @@ header {
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 670px) {
   .wrapper .design-selection {
     display: grid;
     grid-gap: 0;
@@ -282,7 +261,7 @@ header {
   grid-gap: 0;
   grid-template-columns: repeat(2, 1fr);
 }
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 670px) {
   .wrapper .design-selection nav ul {
     display: grid;
     grid-gap: 0;
@@ -322,13 +301,11 @@ header {
   margin: 0.5em;
 }
 
-@media screen and (min-width: 900px) {
-  .zen-resources {
-    display: grid;
-    grid-gap: 0;
-    grid-template-columns: max-content 1fr;
-    grid-template-areas: "r-h3  r-ul";
-  }
+.zen-resources {
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: max-content 1fr;
+  grid-template-areas: "r-h3  r-ul";
 }
 .zen-resources ul {
   display: grid;
@@ -339,54 +316,95 @@ header {
   margin: 0.5em;
 }
 
+/* End of Sidebar */
+/* Main Section */
 .main {
   display: grid;
   grid-gap: 0;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-areas: ". explanation explanation explanation explanation explanation explanation ." ". participation participation participation participation participation participation ." "black-box black-box black-box . . . . ." ". benefits benefits benefits benefits benefits benefits ." ". requirements requirements requirements requirements requirements requirements ." "footer footer footer footer footer footer footer footer";
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "explanation explanation explanation" "participation participation participation" "black-box black-box black-box" "benefits benefits benefits" "requirements requirements requirements" "footer footer footer";
+}
+@media screen and (min-width: 960px) {
+  .main {
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas: ". explanation explanation explanation explanation explanation explanation ." ". participation participation participation participation participation participation ." "black-box black-box black-box . . . . ." ". benefits benefits benefits benefits benefits benefits ." ". requirements requirements requirements requirements requirements requirements ." "footer footer footer footer footer footer footer footer";
+  }
 }
 
 .explanation {
   display: grid;
   grid-gap: 0;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-areas: "exp-h3 exp-h3" "exp-p1 exp-p2";
+  grid-template-columns: 1fr;
+  grid-template-areas: "exp-h3" "exp-p1" "exp-p2";
+}
+@media screen and (min-width: 670px) {
+  .explanation {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "exp-h3 exp-h3" "exp-p1 exp-p2";
+  }
 }
 
 .participation {
   display: grid;
   grid-gap: 0;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-areas: ". par-p1 par-p1" "par-h3 par-p2 par-p2" ". par-p3 par-p3";
+  grid-template-columns: 1fr;
+  grid-template-rows: 70px auto;
+  grid-template-areas: "par-h3" "par-p1" "par-p2" "par-p3";
+  margin: 2em 0;
 }
-.participation h3 {
-  align-self: start;
-  justify-self: center;
+@media screen and (min-width: 670px) {
+  .participation {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "par-h3 par-h3 . ." "par-p1 par-p1 par-p3 par-p3" "par-p2 par-p2 par-p3 par-p3";
+  }
+  .participation h3 {
+    align-self: end;
+    justify-self: start;
+  }
 }
 
-@media screen and (min-width: 900px) {
+.requirements {
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: 1fr;
+  grid-template-areas: "req-h3" "req-p1" "req-p2" "req-p3" "req-p4" "req-p5" "req-vol";
+}
+.requirements p:nth-of-type(5) {
+  margin-bottom: 5em;
+}
+@media screen and (min-width: 960px) {
   .requirements {
     display: grid;
-    grid-gap: 0;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-areas: "req-h3 req-h3 req-p1 req-p1 req-p1 req-p1" ". . req-p2 req-p2 req-p2 req-p2" ". . req-p3 req-p3 req-p3 req-p3" "req-vol req-vol req-p4 req-p4 req-p4 req-p4" "req-vol req-vol req-p5 req-p5 req-p5 req-p5";
-  }
-  footer {
-    display: grid;
-    grid-gap: 0;
-    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1em;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "req-h3 req-p1 req-p1" "req-p5 req-p2 req-p2" ". req-p3 req-p3" "req-vol req-p4 req-p4";
   }
 }
-/* this is the start of the black square coding behind the benefits header */
-.main::after, .benefits {
-  grid-row: 3/5;
+
+footer {
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
 }
 
-.main::after {
-  z-index: -1;
+/* End of Main */
+.benefits {
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: 1fr;
+  grid-template-areas: "b-h3" "b-p" "b-p";
 }
-
-@media screen and (min-width: 900px) {
+.benefits p {
+  align-self: center;
+}
+@media screen and (min-width: 960px) {
   .benefits {
     display: grid;
     grid-gap: 0;
@@ -394,126 +412,229 @@ header {
     grid-template-areas: "b-h3 b-p b-p";
   }
 }
-/* end of black square coding */
-/* Volcano in Requirements area */
-.requirements::after {
-  align-self: end;
-  justify-self: center;
+
+/* Framework of Pseudo Elements */
+/* Black Square for Benefits Header */
+.main::after, .benefits {
+  grid-row: 3/4;
+}
+@media screen and (min-width: 670px) {
+  .main::after, .benefits {
+    grid-row: 3/5;
+  }
 }
 
-.requirements::before {
-  grid-row: 4/6;
-  grid-column: 1/3;
-  align-self: end;
-  justify-self: center;
+.main::after {
+  z-index: -1;
 }
 
-/* End of Volcano */
-/* Orange Dino */
-.intro::after {
+/* End of Black Square */
+/* Dino - Yellow */
+.wrapper::before {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  justify-self: start;
+  align-self: end;
+  transform: scaleX(-1) translate(-90px, -60px) rotate(320deg);
+}
+
+.intro::before {
   grid-row: 1/2;
   grid-column: 2/4;
   justify-self: end;
   align-self: end;
-  margin-top: 1em;
+  transform: translateX(-5vw) rotate(345deg);
 }
-@media screen and (min-width: 900px) {
-  .intro::after {
-    grid-row: 1/3;
-    grid-column: 6/8;
-    justify-self: start;
+
+/* End of Yellow Dino */
+.intro::after {
+  grid-row: 1/3;
+  grid-column: 6/8;
+  justify-self: center;
+  align-self: end;
+}
+
+.explanation::before {
+  grid-row: 1/3;
+  grid-column: 1/2;
+  justify-self: end;
+  align-self: start;
+  transform: translate(0, -40px);
+}
+@media screen and (min-width: 670px) {
+  .explanation::before {
+    grid-column: 2/3;
+    justify-self: center;
+    transform: translate(100px, -40px);
   }
 }
 
-/* Yellow Dino */
-.design-selection::before {
+.participation::before {
   grid-row: 1/2;
-  grid-column: 1/2;
+  grid-column: 1;
   justify-self: end;
-  align-self: center;
+  align-self: start;
+  transform: translateY(-60px);
+  float: right;
 }
-
-.intro::before {
-  grid-row: 2/3;
-  grid-column: 1/2;
-  justify-self: end;
-  align-self: center;
-}
-
-.page-wrapper::before {
-  grid-row: 4/5;
-  grid-column: 3/4;
-  justify-self: center;
-  align-self: center;
-  transform: translateY(-50px);
-  order: 2;
-}
-@media screen and (min-width: 900px) {
-  .page-wrapper::before {
-    grid-row: 5/8;
-    grid-column: 5/7;
-    align-self: end;
-    transform: translateY(50px);
+@media screen and (min-width: 670px) {
+  .participation::before {
+    grid-row: 1/3;
+    grid-column: 4/6;
+    justify-self: start;
+    align-self: start;
   }
 }
 
 .benefits::before {
-  justify-self: center;
   grid-row: 1;
-  grid-column: 3;
-  transform: translateY(-200px);
+  grid-column: 1;
+  justify-self: end;
+  align-self: start;
+  transform: translateY(-145px);
+}
+@media screen and (min-width: 670px) {
+  .benefits::before {
+    transform: translateY(-175px);
+  }
+}
+@media screen and (min-width: 960px) {
+  .benefits::before {
+    grid-column: 3;
+    float: right;
+    transform: translateY(-175px);
+  }
 }
 
-.supporting::before {
-  grid-row: 2/3;
-  grid-column: 2/4;
+.benefits::after {
+  grid-row: 1;
+  grid-column: 1;
+  align-self: start;
+  justify-content: start;
+  position: absolute;
+  order: 1;
+  float: left;
+  transform: translate(-5vh, -115px) rotate(15deg);
+}
+@media screen and (min-width: 960px) {
+  .benefits::after {
+    transform: translate(-200px, -115px) rotate(15deg);
+  }
+}
+
+/* Volcano in Requirements area */
+.requirements::after {
+  align-self: end;
   justify-self: center;
-  order: 2;
+  order: 1;
 }
 
-.page-wrapper::after {
-  grid-row: 10/12;
+.requirements::before {
+  grid-row: 7/8;
   grid-column: 1/3;
-  justify-self: start;
-  transform: rotate(15deg) translateY(68px);
-  order: 2;
+  align-self: end;
+  justify-self: center;
+  order: 0;
+}
+@media screen and (min-width: 960px) {
+  .requirements::before {
+    grid-row: 4/5;
+    grid-column: 1/2;
+  }
 }
 
+/* End of Volcano */
 /* Images */
-.intro::after {
-  content: "";
-  background-image: url("../zengarden/images/dinoorange.svg");
-  background-repeat: no-repeat;
-  width: 250px;
-  height: 250px;
-}
-
-@media screen and (max-width: 500px) {
+@media screen and (min-width: 670px) {
   .intro::after {
     content: "";
     background-image: url("../zengarden/images/dinoorange.svg");
     background-repeat: no-repeat;
-    width: 275px;
-    height: 275px;
+    width: 40vw;
+    height: 40vw;
+    order: 1;
+    max-width: 220px;
+    max-height: 240px;
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 669px) {
   .intro::before {
     content: "";
     background-image: url("../zengarden/images/dinoyellow.svg");
     background-repeat: no-repeat;
-    transform: scaleX(-1) rotate(340deg);
-    width: 150px;
+    width: 30vw;
+    height: 31vw;
+    order: 1;
+    min-width: 140px;
+    min-height: 150px;
+  }
+}
+@media screen and (min-width: 670px) {
+  .wrapper::before {
+    content: "";
+    background-image: url("../zengarden/images/dinoyellow.svg");
+    background-repeat: no-repeat;
+    width: 30vw;
+    height: 31vw;
+    order: 1;
+    max-width: 160px;
+    max-height: 180px;
+  }
+}
+.explanation::before {
+  content: "";
+  background-image: url("../zengarden/images/leaf.svg");
+  background-repeat: no-repeat;
+  width: 20vw;
+  height: 20vw;
+  order: 1;
+  max-width: 90px;
+  min-width: 70px;
+  max-height: 90px;
+  min-height: 70px;
+}
+
+.participation::before {
+  content: "";
+  background-image: url("../zengarden/images/dinoegg.svg");
+  background-repeat: no-repeat;
+  width: 17vw;
+  height: 21vw;
+  order: 1;
+  max-width: 120px;
+  min-width: 100px;
+  max-height: 150px;
+  min-height: 110px;
+}
+
+.benefits::before {
+  content: "";
+  background-image: url("../zengarden/images/dinopink.svg");
+  background-repeat: no-repeat;
+  width: 170px;
+  height: 130px;
+  order: 1;
+}
+@media screen and (min-width: 670px) {
+  .benefits::before {
+    width: 210px;
     height: 160px;
   }
 }
-.design-selection::before {
+
+.benefits::after {
   content: "";
-  background-image: url("../zengarden/images/dinoyellow.svg");
+  background-image: url("../zengarden/images/palmtree.svg");
   background-repeat: no-repeat;
-  transform: scaleX(-1) rotate(340deg);
-  width: 150px;
-  height: 160px;
+  width: 180px;
+  height: 230px;
+  order: 1;
+}
+@media screen and (min-width: 960px) {
+  .benefits::after {
+    width: 250px;
+    height: 320px;
+  }
 }
 
 .requirements::after {
@@ -522,6 +643,7 @@ header {
   background-repeat: no-repeat;
   width: 300px;
   height: 170px;
+  order: 1;
 }
 
 .requirements::before {
@@ -530,60 +652,109 @@ header {
   background-repeat: no-repeat;
   width: 200px;
   height: 142px;
+  order: 1;
 }
 
-.page-wrapper::before {
-  content: "";
-  background-image: url("../zengarden/images/leaf.svg");
-  background-repeat: no-repeat;
-  width: 90px;
-  height: 90px;
+.wrapper li:hover, footer a:hover {
+  animation: shake 0.25s ease-in-out 1;
+  overflow: visible;
 }
 
-.benefits::before {
-  content: "";
-  background-image: url("../zengarden/images/dinopink.svg");
-  background-repeat: no-repeat;
-  width: 300px;
-  height: 190px;
+@keyframes shake {
+  0% {
+    padding: 0;
+  }
+  25% {
+    padding-left: 30px;
+  }
+  50% {
+    padding-left: 0;
+  }
+  75% {
+    padding-left: 20px;
+  }
+  100% {
+    padding: 0;
+  }
+}
+.participation:hover::before {
+  animation: wobble 5s ease-in-out;
 }
 
-.supporting::before {
-  content: "";
-  background-image: url("../zengarden/images/dinoegg.svg");
-  background-repeat: no-repeat;
-  width: 160px;
-  height: 200px;
+@keyframes wobble {
+  0% {
+    transform: translate(0%, -60px);
+  }
+  15% {
+    transform: translate(-25%, -60px) rotate(-5deg);
+  }
+  30% {
+    transform: translate(20%, -60px) rotate(3deg);
+  }
+  45% {
+    transform: translate(-15%, -60px) rotate(-3deg);
+  }
+  60% {
+    transform: translate(10%, -60px) rotate(2deg);
+  }
+  75% {
+    transform: translate(-5%, -60px) rotate(-1deg);
+  }
+  100% {
+    transform: translate(0%, -60px);
+  }
+}
+.benefits:hover::before {
+  animation: bounce-small 2s ease-out;
 }
 
-.page-wrapper::after {
-  content: "";
-  background-image: url("../zengarden/images/palmtree.svg");
-  background-repeat: no-repeat;
-  width: 250px;
-  height: 340px;
+@media screen and (min-width: 670px) {
+  .benefits:hover::before {
+    animation: bounce-large 2s ease-out;
+  }
+}
+@keyframes bounce-small {
+  0%, 20%, 50%, 75%, 80%, 100% {
+    transform: translateY(-145px);
+  }
+  40% {
+    transform: translateY(-185px);
+  }
+  60% {
+    transform: translateY(-165px);
+  }
+}
+@keyframes bounce-large {
+  0%, 20%, 50%, 75%, 80%, 100% {
+    transform: translateY(-175px);
+  }
+  40% {
+    transform: translateY(-235px);
+  }
+  60% {
+    transform: translateY(-215px);
+  }
+}
+.requirements:hover::before {
+  animation: splash 1.5s ease-in forwards;
 }
 
-/* CSS Zen Garden */
-/* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
-.main > *, .intro div, .wrapper div {
+@keyframes splash {
+  0% {
+    transform: translateY(-80px) scale(0.5);
+  }
+  50%, 53% {
+    transform: translateY(-200px) scale(1);
+  }
+  100% {
+    transform: translateY(-80px) scale(1);
+  }
+}
+/* General Settings */
+.main > *,
+.intro div,
+.wrapper div {
   padding: 1em 2em;
-}
-
-p {
-  font-size: 1em;
-  max-width: 70ch;
-  padding-right: 1em;
-}
-
-h1 {
-  padding: 1em;
-  padding-bottom: 0.5em;
-}
-
-h2 {
-  padding: 1em;
-  padding-top: 0;
 }
 
 body {
@@ -602,12 +773,40 @@ h1, h2, h3 {
   font-size: 1.5em;
   color: #FFF;
   font-weight: lighter;
+  z-index: 100;
+}
+
+h1, h2 {
+  padding: 1em;
+}
+
+h1 {
+  padding-bottom: 0.5em;
+}
+
+h2 {
+  padding-top: 0;
 }
 
 h3 {
   text-transform: uppercase;
 }
 
+p {
+  margin: 0 auto;
+  padding: 0 0 1em 0;
+  font-size: 1em;
+  max-width: 70ch;
+  text-align: justify;
+  z-index: 100;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* End of General Settings */
+/* Header area */
 h1::after {
   content: ":";
 }
@@ -615,76 +814,37 @@ h1::after {
 .intro header {
   background-color: #309E6D;
 }
-.intro header h1, .intro header h2 {
+.intro header h1,
+.intro header h2 {
   font-size: 2em;
   margin: 0;
 }
-@media screen and (min-width: 900px) {
-  .intro header h1 {
-    text-align: right;
-  }
-  .intro header h2 {
-    padding: 1em;
-    padding-bottom: 0.5em;
-    padding-left: 0;
-  }
+
+/* End of Header area */
+/* Intro area */
+#zen-preamble {
+  margin: 1em;
+  padding: 0 1em 2em 1em;
+  border-bottom: 10px solid #C93565;
 }
 
-@media screen and (max-width: 900px) {
-  .preamble p:last-of-type {
-    padding-bottom: 2em;
-    margin-bottom: 0;
-    border-bottom: 10px solid #C93565;
-  }
-}
-@media screen and (min-width: 900px) {
-  #zen-summary {
-    padding-left: 0px;
-    padding-top: 0px;
-  }
-  #design-archives {
-    padding-right: 0px;
-  }
-  #design-archives ul {
-    padding-left: 0.25em;
-  }
-}
-abbr {
-  text-decoration: none;
-}
-
-#zen-preamble h3, #zen-explanation h3 {
+.preamble h3, .explanation h3 {
   color: #000;
   font-weight: bold;
 }
 
-#zen-requirements {
-  padding-top: 0;
-  padding-bottom: 0;
-  margin-top: 0;
+/* End of Into area */
+/* Main area */
+.participation {
+  color: #FFF;
+  padding-bottom: 3em;
+  background-image: linear-gradient(to bottom, #106C42, #000);
 }
-
-#zen-requirements h3 {
-  width: max-content;
-  text-align: center;
-  margin: 2em auto;
-  padding: 2em;
-  background-color: #E56B44;
+.participation h3 {
+  text-align: left;
 }
-
-.main::after {
-  content: "";
-  display: block;
-  height: 100%;
-  width: 100%;
-  background-color: #000;
-}
-
-footer {
-  margin-bottom: 15em;
-}
-footer a {
-  text-align: center;
+.participation a {
+  color: #FFF;
 }
 
 .benefits {
@@ -697,55 +857,45 @@ footer a {
   padding: 2em;
 }
 
-@media screen and (min-width: 900px) {
-  .main::after {
-    background-color: #000;
-  }
-  .benefits h3 {
-    align-self: center;
-    justify-self: left;
-  }
-  .benefits p {
-    padding-left: 1em;
-  }
-  #zen-requirements h3 {
-    align-self: center;
-    margin: 1em;
-    margin-top: 1vh;
-  }
-  .requirements p {
-    padding-left: 1em;
-  }
-  .requirements p:first-of-type {
-    margin-top: 1vh;
-  }
-  footer {
-    background-color: #C93565;
-    margin-bottom: 0;
-  }
-  footer a {
-    color: white;
-  }
-}
-.design-selection {
-  margin: 0;
-  background-color: #5BB527;
-}
-.design-selection > h3 {
-  background-color: #5BB527;
-}
-.design-selection h3 {
-  align-self: start;
+.requirements {
+  padding-top: 0;
+  padding-bottom: 0;
   margin-top: 0;
 }
-.design-selection ul {
-  padding: 0;
-  align-content: center;
+.requirements h3 {
+  width: max-content;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 1em;
+  padding: 2em;
+  background-color: #E56B44;
 }
-@media screen and (min-width: 900px) {
-  .design-selection ul {
-    padding-left: 2em;
-  }
+.requirements a {
+  color: #000;
+}
+
+.main::after {
+  content: "";
+  display: block;
+  background-color: #000;
+  height: 170px;
+  width: 100%;
+  min-width: 415px;
+}
+
+footer {
+  margin-bottom: 15em;
+  background-color: #106C42;
+  margin-bottom: 0;
+}
+footer a {
+  text-align: center;
+  color: white;
+}
+
+/* Sidebar or Selecta Design and Archive section */
+.sidebar li {
+  list-style: none;
 }
 
 .wrapper {
@@ -756,8 +906,26 @@ footer a {
 .wrapper > h3 {
   background-color: #E56B44;
 }
+.wrapper li {
+  white-space: nowrap;
+  overflow: visible;
+}
 .wrapper a {
   color: #FFF;
+}
+
+.design-selection {
+  margin: 0;
+  background-color: #5BB527;
+}
+.design-selection > h3 {
+  background-color: #5BB527;
+}
+.design-selection h3 {
+  margin-top: 0;
+}
+.design-selection ul {
+  align-content: center;
 }
 
 .design-archives ul {
@@ -775,13 +943,39 @@ footer a {
   align-self: center;
 }
 .zen-resources ul {
-  padding-left: 0;
+  padding-left: 1em;
 }
 .zen-resources li {
   align-self: center;
 }
 
-@media screen and (min-width: 900px) {
+/* End of Sidebar */
+@media screen and (min-width: 670px) {
+  .intro h1 {
+    text-align: right;
+  }
+  .intro h2 {
+    padding: 1em;
+    padding-bottom: 0.5em;
+    padding-left: 0;
+  }
+  .intro div {
+    padding: 0;
+  }
+  .intro div .preamble {
+    margin: 0;
+  }
+  #zen-preamble {
+    margin: 0;
+    padding: 0;
+    border-bottom: none;
+  }
+  #design-archives {
+    padding-right: 0px;
+  }
+  #design-archives ul {
+    padding-left: 0.25em;
+  }
   .zen-resources {
     background-color: #E56B44;
   }
@@ -791,33 +985,53 @@ footer a {
   .zen-resources ul {
     padding-left: 2em;
   }
-}
-.participation {
-  padding-top: 2em;
-  margin: auto;
-  margin-bottom: 5em;
-  color: #FFF;
-  background-image: linear-gradient(to bottom, #106C42, black);
-}
-.participation a {
-  color: #FFF;
-}
-@media screen and (min-width: 900px) {
+  .explanation {
+    margin-bottom: -1em;
+  }
   .participation {
-    margin: 50px 0px 120px 0px;
+    margin: 50px 0px 75px 0px;
+    padding-bottom: 2em;
+  }
+  .participation p {
+    padding-bottom: 0;
+  }
+  .design-selection ul {
+    padding-left: 2em;
+  }
+  footer {
+    background-color: #C93565;
   }
 }
-.participation p {
-  margin: 1em;
-  padding: 0;
+@media screen and (min-width: 960px) {
+  .main::after {
+    height: 261px;
+  }
+  .main::after {
+    background-color: #000;
+  }
+  .benefits h3 {
+    align-self: center;
+    justify-self: left;
+  }
+  .benefits p {
+    padding-left: 1em;
+  }
+  .requirements {
+    margin-top: 2em;
+  }
+  .requirements h3 {
+    margin-bottom: 0;
+  }
+  .requirements p {
+    padding-bottom: 0;
+  }
+  footer {
+    margin-bottom: 0;
+  }
+  footer a {
+    color: white;
+  }
 }
-
-* a {
-  text-decoration: none;
-}
-
-.sidebar li {
-  list-style: none;
-}
+/* CSS Zen Garden */
 
 /*# sourceMappingURL=style.css.map */
