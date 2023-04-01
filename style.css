@@ -833,6 +833,10 @@ h1::after {
   font-weight: bold;
 }
 
+.summary a {
+  color: #000;
+}
+
 /* End of Into area */
 /* Main area */
 .participation {
